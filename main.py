@@ -1,4 +1,4 @@
-from win10toast import ToastNotifier
+from notification import Notification
 # This is a sample Python script.
 
 # Press Shift+F10 to execute it or replace it with your code.
@@ -13,7 +13,6 @@ def print_hi(name):
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     print_hi('PyCharm')
-    toast = ToastNotifier()
-    toast.show_toast("Corr-Tracker", "Hi, \n You have 5 correspondence almost late (3 days left). \n Please update their status!", duration=20, icon_path="icon.ico")
-
+    notif = Notification("Hi,\nYou have 5 correspondence almost late (3 days left).\nPlease update their status!")
+    notif.show_notif()
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
