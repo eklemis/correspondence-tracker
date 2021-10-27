@@ -1,6 +1,7 @@
 <MainFront>:
     orientation: 'lr-tb'
-
+    rows: 2
+    cols: 1
     canvas.before:
         Color:
             rgb: .6, .6, .6
@@ -23,14 +24,17 @@
         id: ActionView
 
         HiddenIcon_ActionPrevious:
-
+        ActionButton:
+            text: 'Barcode Generator'
+        ActionButton:
+            text: 'DL/RL Indentifier'
         ActionGroup:
             id: App_ActionGroup
             mode: 'spinner'
-            text: 'Jump to Screen'
+            text: 'Other Screens'
 
             ActionButton:
-                text: 'Crime Prediction'
+                text: 'Something here'
                 on_release: app.root.ids.sm.current = 'second'
             ActionButton:
                 text: 'Forum'
@@ -76,7 +80,7 @@
     BoxLayout:
         orientation: 'vertical'
         Label:
-            text: 'Predict Crime'
+            text: 'Something here'
             font_size: 50
 
         BoxLayout:
@@ -88,7 +92,18 @@
                 text: 'get random colour screen'
                 font_size: 30
                 on_release: app.root.ids.sm.current = 'first'
+<RLIdentifierScreen@Screen>:
+    name:'rlIdentifier'
+    GridLayout:
+        rows: 1
+        cols: 1
 
+        Label:
+            text: Barcode
+        TextInput:
+            multiline: False
+
+    GridLayout:
 <BarcodeScreen@Screen>:
     name:'barcode'
     BarcodeGeneratorForm:

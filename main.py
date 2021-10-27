@@ -8,14 +8,11 @@ from notification import Notification
 class WelcomeScreen(Screen):
     pass
 
-
 class FirstScreen(Screen):
     pass
 
-
 class SecondScreen(Screen):
     pass
-
 
 class ScreenManager(ScreenManager):
     pass
