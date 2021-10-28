@@ -14,10 +14,10 @@
 
     ScreenManager:
         id: sm
-        BarcodeScreen:
         WelcomeScreen:
+        BarcodeScreen:
+        RLIdentifierScreen
         FirstScreen:
-        SecondScreen:
 
 <MenuActionBar@ActionBar>:
     ActionView:
@@ -26,8 +26,10 @@
         HiddenIcon_ActionPrevious:
         ActionButton:
             text: 'Barcode Generator'
+            on_release: app.root.ids.sm.current = 'barcode'
         ActionButton:
             text: 'DL/RL Indentifier'
+            on_release: app.root.ids.sm.current = 'rlIdentifier'
         ActionGroup:
             id: App_ActionGroup
             mode: 'spinner'
@@ -35,13 +37,7 @@
 
             ActionButton:
                 text: 'Something here'
-                on_release: app.root.ids.sm.current = 'second'
-            ActionButton:
-                text: 'Forum'
-                on_release:  app.root.ids.sm.current = 'second'
-            ActionButton:
-                text: 'Probable Suspect'
-                on_release:  app.root.ids.sm.current = 'second'
+                on_release: app.root.ids.sm.current = 'first'
 
         ActionGroup:
             id: App_ActionGroup
@@ -75,35 +71,73 @@
     Label:
         text: 'First Screen'
 
-<SecondScreen>:
-    name: 'second'
-    BoxLayout:
-        orientation: 'vertical'
-        Label:
-            text: 'Something here'
-            font_size: 50
-
-        BoxLayout:
-            Button:
-                text: 'Back to Main Menu'
-                font_size: 30
-                on_release: app.root.ids.sm.current = 'first'
-            Button:
-                text: 'get random colour screen'
-                font_size: 30
-                on_release: app.root.ids.sm.current = 'first'
 <RLIdentifierScreen@Screen>:
     name:'rlIdentifier'
+
     GridLayout:
-        rows: 1
+        padding: 20
         cols: 1
+        rows: 2
 
-        Label:
-            text: Barcode
-        TextInput:
-            multiline: False
 
-    GridLayout:
+        GridLayout:
+            rows: 1
+            cols: 2
+
+            size_hint_y: None
+            height: 35
+
+            Label:
+                text: 'Barcode'
+                size_hint_x: None
+                width: 190
+            TextInput:
+                multiline: False
+
+        GridLayout:
+            rows: 1
+            cols: 2
+
+            GridLayout:
+                rows: 3
+                col: 2
+                row_force_default: True
+                row_default_height: 35
+
+                Label:
+                    text: 'Child ID'
+                TextInput:
+                    multiline: False
+                Label:
+                    text: 'Child Name'
+                TextInput:
+                    multiline: False
+                    disabled: True
+                Label:
+                    text:'Correspondence Number'
+                TextInput:
+                    multiline: False
+
+            GridLayout:
+                rows: 3
+                col: 2
+                row_force_default: True
+                row_default_height: 35
+
+                Label:
+                    text: 'Sponsor ID'
+                TextInput:
+                    multiline: False
+                Label:
+                    text: 'Sponsor Name'
+                TextInput:
+                    multiline: False
+                    disabled: True
+                Label:
+                    text:'ASISt Date Entry'
+                TextInput:
+                    multiline: False
+                    disabled: True
 <BarcodeScreen@Screen>:
     name:'barcode'
     BarcodeGeneratorForm:
@@ -123,18 +157,22 @@
         size_hint_x: None
         width: 200
     TextInput:
+        id: last_code
         multiline: False
         disabled: True
         size_hint_x: None
         width: 200
+        text: root.lastCode
     Label:
         text: 'How much code to generate'
         size_hint_x: None
         width: 200
     TextInput:
+        id: num_of_barcode
         multiline: False
         size_hint_x: None
         width: 200
+
     Button:
         text: 'Generate'
         size_hint_x: None
@@ -142,6 +180,8 @@
 
         pos_hint: {None, None}
         x: 200
+
+        on_release: root.generateBarcode(num_of_barcode.text)
 <BarcodesPage>:
     cols: 1
     rows: 2
@@ -149,5 +189,5 @@
     PageLayout:
     Button:
         size_hint_y: None
-        height: 10
+        height: 25
         text:'Print'

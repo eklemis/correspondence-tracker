@@ -1,9 +1,11 @@
 from kivy.app import App
+from kivy.properties import StringProperty
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.pagelayout import PageLayout
 from kivy.uix.screenmanager import Screen, ScreenManager
 
 from notification import Notification
+from barcode import Barcode
 
 class WelcomeScreen(Screen):
     pass
@@ -11,14 +13,23 @@ class WelcomeScreen(Screen):
 class FirstScreen(Screen):
     pass
 
-class SecondScreen(Screen):
-    pass
-
 class ScreenManager(ScreenManager):
     pass
 
 class BarcodeGeneratorForm(GridLayout):
-    pass
+    lastCode = StringProperty()
+    _barcode = Barcode()
+    lastCode = StringProperty(str(_barcode.getLastId()))
+
+    def generateBarcode(self, num_of_barcode):
+        if num_of_barcode == "":
+            num_of_barcode = 5
+        else:
+            num_of_barcode = int(num_of_barcode)
+
+        self._barcode.generateBarcode(num_of_barcode)
+        self.lastCode = str(self._barcode.getLastId())
+
 class BarcodesPage(GridLayout):
     pass
 
@@ -28,11 +39,23 @@ class MainFront(GridLayout):
 class CorrManagerApp(App):
     title = 'Sponsorship Correspondence Manager'
     def build(self):
-        return MainFront()
+        self._barcode = Barcode()
+        self.mainFront = MainFront()
+        return self.mainFront
+
+    def generateBarcode(self, num_of_barcode):
+        if num_of_barcode == "":
+            num_of_barcode = 5
+        else:
+            num_of_barcode = int(num_of_barcode)
+
+        self._barcode.generateBarcode(num_of_barcode)
+        self.mainFront.ids.last_code = str(self._barcode.getLastId())
+
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    CorrManagerApp().run()
     #notifikasi = Notification("Hi,\nYou have 5 correspondence almost late (3 days left).\nPlease update their status!")
     #notifikasi.show()
+    CorrManagerApp().run()
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
