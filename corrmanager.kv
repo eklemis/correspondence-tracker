@@ -16,7 +16,7 @@
         id: sm
         WelcomeScreen:
         BarcodeScreen:
-        RLIdentifierScreen
+        TDLIdentifierScreen
         FirstScreen:
 
 <MenuActionBar@ActionBar>:
@@ -29,7 +29,7 @@
             on_release: app.root.ids.sm.current = 'barcode'
         ActionButton:
             text: 'DL/RL Indentifier'
-            on_release: app.root.ids.sm.current = 'rlIdentifier'
+            on_release: app.root.ids.sm.current = 'tdlIdentifier'
         ActionGroup:
             id: App_ActionGroup
             mode: 'spinner'
@@ -71,14 +71,14 @@
     Label:
         text: 'First Screen'
 
-<RLIdentifierScreen@Screen>:
-    name:'rlIdentifier'
+<TDLIdentifierScreen>:
+    name:'tdlIdentifier'
 
     GridLayout:
         padding: 20
         cols: 1
-        rows: 2
-
+        rows: 3
+        size_hint: (1, .8)
 
         GridLayout:
             rows: 1
@@ -107,10 +107,14 @@
                 Label:
                     text: 'Child ID'
                 TextInput:
+                    id: child_id
                     multiline: False
+                    text: root.child_id
+                    on_text_validate: root.generateFilledTdl()
                 Label:
                     text: 'Child Name'
                 TextInput:
+                    id: child_name
                     multiline: False
                     disabled: True
                 Label:
@@ -127,10 +131,12 @@
                 Label:
                     text: 'Sponsor ID'
                 TextInput:
+                    id: donor_id
                     multiline: False
                 Label:
                     text: 'Sponsor Name'
                 TextInput:
+                    id: donor_name
                     multiline: False
                     disabled: True
                 Label:
@@ -138,6 +144,14 @@
                 TextInput:
                     multiline: False
                     disabled: True
+        GridLayout:
+            rows: 1
+            cols: 2
+            row_force_default: True
+            row_default_height: 35
+            Button:
+                text:"Generate Filled Correspondence"
+                on_release: root.displayPDF()
 <BarcodeScreen@Screen>:
     name:'barcode'
     BarcodeGeneratorForm:

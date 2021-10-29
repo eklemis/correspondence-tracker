@@ -12,11 +12,11 @@ class Sponsorship:
     _child = None
     _donor = None
 
-    def __init__(self, of_child_id="11300001"):
+    def __init__(self, of_child_id):
         self._child = Child(of_child_id)
-        self.pairChildDonor()
+        self.__pairChildDonor()
 
-    def pairChildDonor(self):
+    def __pairChildDonor(self):
         base = "D:\\data-corr_manager\\"
         sponsorship_file = base + "DONOR_ALL.xlsx"
 
@@ -36,5 +36,8 @@ class Sponsorship:
         else:
             self._donor = Donor("")
 
+    def getChild(self):
+        return self._child
 
-sp = Sponsorship()
+    def getDonor(self):
+        return self._donor
