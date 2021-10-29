@@ -4,7 +4,7 @@ from kivy.uix.gridlayout import GridLayout
 from kivy.uix.pagelayout import PageLayout
 from kivy.uix.screenmanager import Screen, ScreenManager
 
-from notification import Notification
+from notification_rl import NotificationRL
 from barcode import Barcode
 
 class WelcomeScreen(Screen):
@@ -55,7 +55,9 @@ class CorrManagerApp(App):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    #notifikasi = Notification("Hi,\nYou have 5 correspondence almost late (3 days left).\nPlease update their status!")
-    #notifikasi.show()
+    notifikasi = NotificationRL()
+    notifikasi.show()
+
     CorrManagerApp().run()
+
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
