@@ -22,13 +22,13 @@ class NotificationRL:
         self.temp = len(rem_day)
         return self.temp
 
-    def clickableNotif(self):
+    '''def clickableNotif(self):
         download = "https://google.com"
-        webbrowser.open(download)
+        webbrowser.open(download)'''
 
     def show(self):
         toast = ToastNotifier()
-        toast.show_toast("Sponsorship Corr Tracker",self.message, duration=20,icon_path="icon.ico", callback_on_click=self.clickableNotif())
+        toast.show_toast("Sponsorship Corr Tracker",self.message, duration=20,icon_path="icon.ico")
 
 
 
