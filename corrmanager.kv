@@ -28,7 +28,7 @@
             text: 'Barcode Generator'
             on_release: app.root.ids.sm.current = 'barcode'
         ActionButton:
-            text: 'DL/RL Indentifier'
+            text: 'Letter Indentifier'
             on_release: app.root.ids.sm.current = 'tdlIdentifier'
         ActionGroup:
             id: App_ActionGroup
@@ -77,7 +77,7 @@
     GridLayout:
         padding: 20
         cols: 1
-        rows: 3
+        rows: 4
         size_hint: (1, .8)
 
         GridLayout:
@@ -150,8 +150,30 @@
             row_force_default: True
             row_default_height: 35
             Button:
-                text:"Generate Filled Correspondence"
+                text:"Generate Filled TDL"
                 on_release: root.displayPDF()
+        GridLayout:
+            rows: 1
+            cols: 3
+
+            row_force_default: True
+            row_default_height: 35
+
+            text_input: text_input
+
+            Button:
+                text: "Load downstream report"
+                on_release: root.show_load()
+            Button:
+                text: "Generate Multiple TDL"
+            BoxLayout:
+                TextInput:
+                    id: text_input
+                    text: ''
+
+                RstDocument:
+                    text: text_input.text
+                    show_errors: True
 <BarcodeScreen@Screen>:
     name:'barcode'
     BarcodeGeneratorForm:

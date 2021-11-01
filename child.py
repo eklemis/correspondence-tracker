@@ -1,44 +1,41 @@
 import pandas as pd
+from databasesqlite import sqlite_cnx, sqlite_cursor
 
 class Child:
-    child_id = ""
-    child_name = ""
-    latest_status = ""
-    status_date = ""
+    _child_id = ""
+    _child_name = ""
+    _latest_status = ""
+    _status_date = ""
     def __init__(self, id):
-        self.child_id = id
+        self._child_id = id
         self.setRemainingAttributes()
 
     def setRemainingAttributes(self):
-        base = "D:\\data-corr_manager\\"
-        children_file = base+"CHILDREN_ALL.xlsx"
+        sql_get_child = f"select * from children_all where child_id='{self.getChildId()}'"
 
-        df = pd.read_excel(children_file, sheet_name='Sheet1')
-        df = df.filter(['Child ID','Person Full Name','Status Description','Status Date'])
-        df = df.rename(columns = {"Child ID": "ChildId", "Person Full Name": "FullName", "Status Date":"StatusDate"})
-
-        df = df[df["ChildId"] == int(self.child_id)]
-        if not df.empty:
-            self.child_name = df.iat[0,1]
-            self.latest_status = df.iat[0,2]
-            self.status_date = df.iat[0,3]
-
-        print(f"a child name :{self.getFirstName()} has been created")
+        if sqlite_cnx is not None:
+            sqlite_cursor.execute(sql_get_child)
+            record = sqlite_cursor.fetchone()
+            print(record)
+            if len(record) > 0:
+                self._child_name = record[1]
+                self._latest_status = record[2]
+                self._status_date = record[3]
 
     def setId(self, id):
-        self.child_id = id
+        self._child_id = id
 
     def setName(self, name):
-        self.child_name = name
+        self._child_name = name
 
     def getStatus(self):
-        return self.latest_status
+        return self._latest_status
     def getChildId(self):
-        return self.child_id
+        return self._child_id
     def getFirstName(self):
         #only return child first name
         #if first name only have 1 letter, return first name+next word in the name
-        names = self.child_name.split(" ")
+        names = self._child_name.split(" ")
         if len(names) > 0:
             if not len(names[0]) == 1:
                 return names[0]
