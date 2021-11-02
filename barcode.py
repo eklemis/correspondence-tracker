@@ -46,7 +46,7 @@ class Barcode:
         margin_left = 5
         per_row = 5
         per_col = 11
-        count_barcode = self.last_id
+        count_barcode = 0
         pdf = FPDF()
         pdf.add_page()
 

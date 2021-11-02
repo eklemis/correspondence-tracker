@@ -8,7 +8,7 @@ from kivy.uix.popup import Popup
 from kivy.uix.screenmanager import Screen, ScreenManager
 import os
 
-from notification import Notification
+from notification_rl import NotificationRL
 from barcode import Barcode
 from tdl import TDL
 
@@ -127,7 +127,9 @@ Factory.register('SaveDialog', cls=SaveDialog)
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    #notifikasi = Notification("Hi,\nYou have 5 correspondence almost late (3 days left).\nPlease update their status!")
-    #notifikasi.show()
+    notifikasi = NotificationRL()
+    notifikasi.show()
+
     CorrManagerApp().run()
+
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
