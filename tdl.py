@@ -16,7 +16,7 @@ class TDL(Correspondence):
         pdf.add_font("NunitoSans400", "", r"Nunito_Sans\NunitoSans-Regular.ttf", uni=True)
         pdf.set_font("NunitoSans400","",14)
         pdf.text(start_left, start_top, f"{self.sponsorship.getChild().getFirstName()}")
-        pdf.text(start_left+space_horizontal, start_top, self.sponsorship.getDonor().getFirstName())
+        pdf.text(start_left+space_horizontal, start_top, self.sponsorship.getDonor().getTitleFirstName())
         pdf.text(start_left, start_top+space_vertical, self.sponsorship.getChild().getChildId())
         pdf.text(start_left+space_horizontal, start_top+space_vertical, self.sponsorship.getDonor().getId())
         ##Create Second Page
