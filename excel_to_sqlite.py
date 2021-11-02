@@ -71,6 +71,8 @@ def parsingMasterDonors():
     masterDonorsfile = os.path.join(excels_dir, "MASTER_DONORS.xlsx")
     df = pd.read_excel(masterDonorsfile, sheet_name='Sheet1')
     df = df.filter(['donor_id','donor_title','donor_first','donor_middle','donor_last','donor_suffix','env_line_1','donor_salut','adrs_line_1','city','state_prov','country','postal_code'])
+    df = df.dropna(subset=['donor_title'])
+    df = df.dropna(subset=['donor_middle'])
     df = df.astype(str)
     df.drop_duplicates()
 
@@ -117,6 +119,41 @@ def parsingMasterEnr():
     sqlite_cursor.executemany(sql_insertmanymsterener, result)
     sqlite_cnx.commit()
 
-#parsingChildrenAll()
-#parsingMasterDonors()
-#parsingMasterEnr()
+def parsingDonorAll():
+    sql_create_donorall_table = """ CREATE TABLE IF NOT EXISTS donor_all (
+        child_id text,
+        donor_id text,
+        spons_start_date text,
+        spons_end_date text,
+        enr_type_code text,
+        ddb_stat_code text 
+    ) """
+
+    sql_drop_donorall_table = """ DROP TABLE IF EXISTS donor_all """
+
+    if sqlite_cnx is not None:
+        sqlite_cursor.execute(sql_drop_donorall_table)
+        sqlite_cursor.execute(sql_create_donorall_table)
+
+    donorAllfile = os.path.join(excels_dir, "DONOR_ALL.xlsx")
+    df = pd.read_excel(donorAllfile, sheet_name='Sheet1')
+    df = df.filter(['child_id','donor_id','Spons_Start_Date','Spons_End_Date','enr_type_code','ddb_stat_code'])
+    #remove NaN values
+    df = df.dropna(subset=['donor_id'])
+    df['donor_id'] = df['donor_id'].astype(int)
+    df = df.astype(str)
+    df.drop_duplicates()
+
+    # convert dataframe to tuples
+    records = df.to_records(index=False)
+    # put tuples to list
+    result = list(records)
+
+    sql_insertmanydonorall = "INSERT INTO donor_all values (?,?,?,?,?,?)"
+    sqlite_cursor.executemany(sql_insertmanydonorall,result)
+    sqlite_cnx.commit()
+
+parsingChildrenAll()
+parsingMasterDonors()
+parsingMasterEnr()
+parsingDonorAll()

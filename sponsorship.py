@@ -2,6 +2,7 @@ import pandas as pd
 
 from child import Child
 from donor import Donor
+from databasesqlite import sqlite_cnx, sqlite_cursor
 
 '''
 sponsorship modules represent child-donor relation data
@@ -17,23 +18,16 @@ class Sponsorship:
         self.__pairChildDonor()
 
     def __pairChildDonor(self):
-        base = "D:\\data-corr_manager\\"
-        sponsorship_file = base + "DONOR_ALL.xlsx"
+        sql_pair = f"select donor_id from donor_all where child_id='{self._child.getChildId()}' and spons_end_date='nan'"
 
-        df = pd.read_excel(sponsorship_file, sheet_name='Sheet1')
-        del df["country"]
-        del df["Phone"]
-        del df["postal_code"]
-        del df["state_prov"]
-        del df["city"]
-        del df["adrs_line_3"]
-        del df["adrs_line_2"]
-        del df["adrs_line_1"]
-
-        df = df[(df["child_id"] == int(self._child.getChildId())) & (df["Spons_End_Date"].isnull())]
-        if not df.empty:
-            self._donor = Donor(str(int(df.iat[0, 13])))
-            print(f"df content: {df}")
+        if sqlite_cnx is not None:
+            sqlite_cursor.execute(sql_pair)
+            record = sqlite_cursor.fetchone()
+            if record:
+                self._donor = Donor(record[0])
+                print(f"find donor with id: {record[0]}")
+            else:
+                self._donor = Donor("")
         else:
             self._donor = Donor("")
 
