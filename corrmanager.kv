@@ -97,6 +97,8 @@
         GridLayout:
             rows: 1
             cols: 2
+            size_hint_y: None
+            height: 130
 
             GridLayout:
                 rows: 3
@@ -149,16 +151,27 @@
             cols: 2
             row_force_default: True
             row_default_height: 35
+            size_hint_y: None
+            height: 65
             Button:
                 text:"Generate Filled TDL"
                 on_release: root.displayPDF()
         GridLayout:
             rows: 1
-            cols: 1
+            cols: 2
             row_force_default: True
             row_default_height: 200
             FileChooserListView:
                 on_selection: root.getSelectedFile(*args)
+            GridLayout:
+                rows: 2
+                cols: 1
+
+                Label:
+                    id: selected_file
+                    text: 'Selected File: ...'
+                Button:
+                    text: 'Generate Filled TDL from Selected File'
 <BarcodeScreen@Screen>:
     name:'barcode'
     BarcodeGeneratorForm:

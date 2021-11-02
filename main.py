@@ -8,7 +8,7 @@ from kivy.uix.popup import Popup
 from kivy.uix.screenmanager import Screen, ScreenManager
 import os
 
-from notification_rl import NotificationRL
+#from notification_rl import NotificationRL
 
 from barcode import Barcode
 from tdl import TDL
@@ -24,17 +24,6 @@ class FirstScreen(Screen):
 
 class ScreenManager(ScreenManager):
     pass
-
-
-class LoadDialog(FloatLayout):
-    load = ObjectProperty(None)
-    cancel = ObjectProperty(None)
-
-
-class SaveDialog(FloatLayout):
-    save = ObjectProperty(None)
-    text_input = ObjectProperty(None)
-    cancel = ObjectProperty(None)
 
 
 class TDLIdentifierScreen(Screen):
@@ -58,42 +47,20 @@ class TDLIdentifierScreen(Screen):
     def displayPDF(self):
         if self._tdl:
             self._tdl.generatePageAll()
+
     def getSelectedFile(self, *args):
-        selectedFile = args[1][0]
-        print(selectedFile)
+        _downstream_path = args[1][0]
+        self.ids.selected_file.text = f"Selected File: {_downstream_path}"
+        if _downstream_path != '':
+            if os.path.isfile(_downstream_path):
+                extension = os.path.splitext(_downstream_path)[1]
+                if extension == '.xlsx':
+                    from multi_tdl import generateFromExcel
 
-    def dismiss_popup(self):
-        self._popup.dismiss()
+                    generateFromExcel(_downstream_path)
+                else:
+                    pass
 
-    def show_load(self):
-        content = LoadDialog(load=self.load, cancel=self.dismiss_popup)
-        self._popup = Popup(title="Load file", content=content,
-                            size_hint=(0.9, 0.9))
-        self._popup.open()
-
-    def show_save(self):
-        content = SaveDialog(save=self.save, cancel=self.dismiss_popup)
-        self._popup = Popup(title="Save file", content=content,
-                            size_hint=(0.9, 0.9))
-        self._popup.open()
-
-    def load(self, path, filename):
-        with open(os.path.join(path, filename[0])) as stream:
-            self.text_input.text = stream.read()
-
-        self.dismiss_popup()
-
-    def save(self, path, filename):
-        with open(os.path.join(path, filename), 'w') as stream:
-            stream.write(self.text_input.text)
-
-        self.dismiss_popup()
-
-    def _fbrowser_canceled(self, instance):
-        print ('cancelled, Close self.')
-
-    def _fbrowser_success(self, instance):
-        print (instance.selection)
 
 class BarcodeGeneratorForm(GridLayout):
     lastCode = StringProperty()
@@ -125,10 +92,6 @@ class CorrManagerApp(App):
         self._barcode = Barcode()
         self.mainFront = MainFront()
         return self.mainFront
-
-Factory.register('Root', cls=Root)
-Factory.register('LoadDialog', cls=LoadDialog)
-Factory.register('SaveDialog', cls=SaveDialog)
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
