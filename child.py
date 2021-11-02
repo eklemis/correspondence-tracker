@@ -16,8 +16,7 @@ class Child:
         if sqlite_cnx is not None:
             sqlite_cursor.execute(sql_get_child)
             record = sqlite_cursor.fetchone()
-            print(record)
-            if len(record) > 0:
+            if record:
                 self._child_name = record[1]
                 self._latest_status = record[2]
                 self._status_date = record[3]

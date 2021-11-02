@@ -33,6 +33,7 @@ class Sponsorship:
         df = df[(df["child_id"] == int(self._child.getChildId())) & (df["Spons_End_Date"].isnull())]
         if not df.empty:
             self._donor = Donor(str(int(df.iat[0, 13])))
+            print(f"df content: {df}")
         else:
             self._donor = Donor("")
 

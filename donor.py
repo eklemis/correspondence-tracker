@@ -31,8 +31,7 @@ class Donor:
         if sqlite_cnx is not None:
             sqlite_cursor.execute(sql_get_donor)
             record = sqlite_cursor.fetchone()
-            print(record)
-            if len(record) > 0:
+            if record:
                 self._donor_title = record[1]
                 self._donor_first = record[2]
                 self._donor_middle = record[3]
@@ -51,17 +50,9 @@ class Donor:
                 self._ddb_stat_code = record[15]
                 self._status_date = record[16]
 
-                '''dce_source = base + "MASTER_ENR.xlsx"
-
-                df = pd.read_excel(dce_source, sheet_name='Sheet1')
-                df = df[df["donor_id"] == int(self._donor_id)].sort_values(by="hist_date", ascending=False)
-
-                self._cmit_nbr = df.iat[0,2]
-                self._enr_seq = df.iat[0,3]
-                self._ddb_stat_code = df.iat[0,7]
-                self._status_date = df.iat[0, 5]'''
-
                 print(f"sponsor with name {self.getTitleFirstName()} created")
+            else:
+                self._donor_id = "No active donor"
 
     def getId(self):
         return self._donor_id

@@ -9,6 +9,7 @@ from kivy.uix.screenmanager import Screen, ScreenManager
 import os
 
 from notification_rl import NotificationRL
+
 from barcode import Barcode
 from tdl import TDL
 
@@ -51,7 +52,7 @@ class TDLIdentifierScreen(Screen):
             self._tdl = TDL(self.child_id)
             self.ids.child_name.text = self._tdl.sponsorship.getChild().getFirstName()
             self.ids.donor_id.text = self._tdl.sponsorship.getDonor().getId()
-            self.ids.donor_name.text = self._tdl.sponsorship.getDonor().getFirstName()
+            self.ids.donor_name.text = self._tdl.sponsorship.getDonor().getTitleFirstName()
         else:
             print("Empty Id")
     def displayPDF(self):
@@ -127,8 +128,8 @@ Factory.register('SaveDialog', cls=SaveDialog)
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    notifikasi = NotificationRL()
-    notifikasi.show()
+    #notifikasi = NotificationRL()
+    #notifikasi.show()
 
     CorrManagerApp().run()
 

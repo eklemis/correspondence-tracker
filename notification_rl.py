@@ -3,7 +3,7 @@ import webbrowser
 import pandas as pd
 from datetime import timedelta
 from win10toast import ToastNotifier
-from win10toast_click import ToastNotifier
+#from win10toast_click import ToastNotifier
 
 
 class NotificationRL:
