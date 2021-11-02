@@ -3,7 +3,7 @@ import webbrowser
 import pandas as pd
 from datetime import timedelta
 from win10toast import ToastNotifier
-#from win10toast_click import ToastNotifier
+from win10toast_click import ToastNotifier
 
 
 class NotificationRL:
@@ -18,20 +18,22 @@ class NotificationRL:
         corr_type = df.loc[(df['corr_type_code'] == 'SLC') | (df['corr_type_code'] == 'SEC')]
         rem_day = pd.Series(corr_type['rem_day']).dt.days
         rem_day = rem_day[rem_day >= -10]
-        #corr_type.to_excel("cek.xlsx")
+        corr_type.to_excel("rem_corr_late.xlsx")
         self.temp = len(rem_day)
         return self.temp
 
-    '''def clickableNotif(self):
-        download = "https://google.com"
-        webbrowser.open(download)'''
+    def clickableNotif(self):
+        corr_late = "rem_corr_late.xlsx"
+        webbrowser.open_new(corr_late)
+
 
     def show(self):
         toast = ToastNotifier()
-        toast.show_toast("Sponsorship Corr Tracker",self.message, duration=20,icon_path="icon.ico")
+        toast.show_toast("Sponsorship Corr Tracker",self.message, duration=20,icon_path="icon.ico", callback_on_click=lambda :self.clickableNotif())
 
 
-
+notifikasi = NotificationRL()
+notifikasi.show()
 
 
 

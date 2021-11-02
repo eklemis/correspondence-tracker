@@ -9,3 +9,5 @@ corr_manager_local.db
 __pycache__/
 
 *.pdf
+
+corr_manager_local.db
