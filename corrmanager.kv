@@ -78,7 +78,7 @@
         padding: 20
         cols: 1
         rows: 4
-        size_hint: (1, .8)
+        size_hint: (1, .98)
 
         GridLayout:
             rows: 1
@@ -154,26 +154,11 @@
                 on_release: root.displayPDF()
         GridLayout:
             rows: 1
-            cols: 3
-
+            cols: 1
             row_force_default: True
-            row_default_height: 35
-
-            text_input: text_input
-
-            Button:
-                text: "Load downstream report"
-                on_release: root.show_load()
-            Button:
-                text: "Generate Multiple TDL"
-            BoxLayout:
-                TextInput:
-                    id: text_input
-                    text: ''
-
-                RstDocument:
-                    text: text_input.text
-                    show_errors: True
+            row_default_height: 200
+            FileChooserListView:
+                on_selection: root.getSelectedFile(*args)
 <BarcodeScreen@Screen>:
     name:'barcode'
     BarcodeGeneratorForm:

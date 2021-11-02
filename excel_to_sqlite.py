@@ -71,8 +71,8 @@ def parsingMasterDonors():
     masterDonorsfile = os.path.join(excels_dir, "MASTER_DONORS.xlsx")
     df = pd.read_excel(masterDonorsfile, sheet_name='Sheet1')
     df = df.filter(['donor_id','donor_title','donor_first','donor_middle','donor_last','donor_suffix','env_line_1','donor_salut','adrs_line_1','city','state_prov','country','postal_code'])
-    df = df.dropna(subset=['donor_title'])
-    df = df.dropna(subset=['donor_middle'])
+    df['donor_title'] = df['donor_title'].fillna('')
+    df['donor_middle'] = df['donor_middle'].fillna('')
     df = df.astype(str)
     df.drop_duplicates()
 
@@ -139,7 +139,7 @@ def parsingDonorAll():
     df = pd.read_excel(donorAllfile, sheet_name='Sheet1')
     df = df.filter(['child_id','donor_id','Spons_Start_Date','Spons_End_Date','enr_type_code','ddb_stat_code'])
     #remove NaN values
-    df = df.dropna(subset=['donor_id'])
+    df['donor_id'] = df['donor_id'].fillna(0)
     df['donor_id'] = df['donor_id'].astype(int)
     df = df.astype(str)
     df.drop_duplicates()

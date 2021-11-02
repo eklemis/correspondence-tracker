@@ -58,6 +58,10 @@ class TDLIdentifierScreen(Screen):
     def displayPDF(self):
         if self._tdl:
             self._tdl.generatePageAll()
+    def getSelectedFile(self, *args):
+        selectedFile = args[1][0]
+        print(selectedFile)
+
     def dismiss_popup(self):
         self._popup.dismiss()
 
