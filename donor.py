@@ -1,4 +1,3 @@
-import pandas as pd
 from databasesqlite import sqlite_cnx, sqlite_cursor
 
 class Donor:

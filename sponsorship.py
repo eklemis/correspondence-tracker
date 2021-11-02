@@ -1,5 +1,3 @@
-import pandas as pd
-
 from child import Child
 from donor import Donor
 from databasesqlite import sqlite_cnx, sqlite_cursor
