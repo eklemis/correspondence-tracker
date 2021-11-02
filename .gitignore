@@ -6,4 +6,4 @@ database_config.txt
 
 corr_manager_local.db
 
-__pycache__/*.*
+__pycache__/
