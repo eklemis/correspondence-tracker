@@ -46,6 +46,77 @@ def parsingChildrenAll():
 
 
 def parsingMasterDonors():
-    masterDonorsfile = os.path.join(excels_dir, "MASTER_DONORS.xlsx")
+    sql_create_donorall_table = """ CREATE TABLE IF NOT EXISTS master_donor (
+        donor_id text primary key,
+        donor_title text,
+        donor_first text not null,
+        donor_middle text,
+        donor_last text,
+        donor_sufix text,
+        env_line_1 text,
+        donor_salut text,
+        adrs_line_1 text,
+        city text,
+        state_prov text,
+        country text,
+        postal_code text
+    ) """
 
-parsingChildrenAll()
+    sql_drop_donorall_table = """ DROP TABLE IF EXISTS master_donor """
+
+    if sqlite_cnx is not None:
+        sqlite_cursor.execute(sql_drop_donorall_table)
+        sqlite_cursor.execute(sql_create_donorall_table)
+
+    masterDonorsfile = os.path.join(excels_dir, "MASTER_DONORS.xlsx")
+    df = pd.read_excel(masterDonorsfile, sheet_name='Sheet1')
+    df = df.filter(['donor_id','donor_title','donor_first','donor_middle','donor_last','donor_suffix','env_line_1','donor_salut','adrs_line_1','city','state_prov','country','postal_code'])
+    df = df.astype(str)
+    df.drop_duplicates()
+
+    # convert dataframe to tuples
+    records = df.to_records(index=False)
+    # put tuples to list
+    result = list(records)
+
+    # push all records to children_all table on corr_manager_local.db
+    sql_insertmanychildren = "INSERT INTO master_donor values (?,?,?,?,?,?,?,?,?,?,?,?,?)"
+    sqlite_cursor.executemany(sql_insertmanychildren, result)
+    sqlite_cnx.commit()
+
+
+def parsingMasterEnr():
+    sql_create_masterenr_table = """ CREATE TABLE IF NOT EXISTS master_enr (
+    donor_id text,
+    cmit_nbr text,
+    enr_seq text,
+    seq_nbr text,
+    hist_date text,
+    ddb_stat_code text
+    ) """
+
+    sql_drop_masterenr_table = """ DROP TABLE IF EXISTS master_enr """
+
+    if sqlite_cnx is not None:
+        sqlite_cursor.execute(sql_drop_masterenr_table)
+        sqlite_cursor.execute(sql_create_masterenr_table)
+
+    masterEnrfile = os.path.join(excels_dir, "MASTER_ENR.xlsx")
+    df = pd.read_excel(masterEnrfile, sheet_name='Sheet1')
+    df = df.filter(['donor_id','cmit_nbr','enr_seq','seq_nbr','hist_date','ddb_stat_code'])
+    df = df.astype(str)
+    df.drop_duplicates()
+
+    # convert dataframe to tuples
+    records = df.to_records(index=False)
+    # put tuples to list
+    result = list(records)
+
+    # push all records to master_enr table on corr_manager_local.db
+    sql_insertmanymsterener = "INSERT INTO master_enr values (?,?,?,?,?,?)"
+    sqlite_cursor.executemany(sql_insertmanymsterener, result)
+    sqlite_cnx.commit()
+
+#parsingChildrenAll()
+#parsingMasterDonors()
+#parsingMasterEnr()
