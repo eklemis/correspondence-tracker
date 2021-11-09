@@ -158,20 +158,28 @@
                 on_release: root.displayPDF()
         GridLayout:
             rows: 1
-            cols: 2
+            cols: 3
             row_force_default: True
-            row_default_height: 200
-            FileChooserListView:
-                on_selection: root.getSelectedFile(*args)
+            row_default_height: 35
+            Label:
+                id: selected_file
+                text: 'Downstream file: ...'
+                pos_hint: {'left': 1, 'top': 1}
+            Button:
+                text: "Select File"
+                size_hint_x: None
+                width: 150
+                on_release:root.openExplorer()
             GridLayout:
-                rows: 2
-                cols: 1
-
-                Label:
-                    id: selected_file
-                    text: 'Selected File: ...'
+                rows: 1
+                cols: 2
+                padding_x: 5
                 Button:
-                    text: 'Generate Filled TDL from Selected File'
+                    id: generate_many
+                    text: 'Generate TDL From Downstream'
+                    disabled: True
+                    on_release:root.generateTDLmany()
+
 <BarcodeScreen@Screen>:
     name:'barcode'
     BarcodeGeneratorForm:

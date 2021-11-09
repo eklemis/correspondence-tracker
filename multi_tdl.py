@@ -25,7 +25,8 @@ def __getChildIds(path):
     while (sheet[f'{col}{row}'].value != None):
         child_ids.append(sheet[f'{col}{row}'].value)
         row += 1
-
+    #collect child ids from transfer donor children
+    
     return child_ids
 
 def generateFromExcel(path):

@@ -1,3 +1,5 @@
+from pathlib import Path
+
 from docutils.nodes import Root
 from kivy.app import App
 from kivy.factory import Factory
@@ -29,7 +31,7 @@ class ScreenManager(ScreenManager):
 class TDLIdentifierScreen(Screen):
     child_id = StringProperty()
     _tdl = None
-
+    _downstream_path = ""
     def generateFilledTdl(self):
         self.child_id = self.ids.child_id.text
         loadfile = ObjectProperty(None)
@@ -47,7 +49,24 @@ class TDLIdentifierScreen(Screen):
     def displayPDF(self):
         if self._tdl:
             self._tdl.generatePageAll()
+    def openExplorer(self):
+        from plyer import filechooser
+        path = filechooser.open_file(title="Pick a downstream report", filters=[("Excel file", "*.xlsx")])
+        print(path)
+        path = path[0]
+        self.ids.selected_file.text = f"Selected File: {path}"
+        self._downstream_path = path
+        self.ids.generate_many.disabled = False
 
+    def generateTDLmany(self):
+        if self._downstream_path != '':
+            if os.path.isfile(self._downstream_path):
+                extension = os.path.splitext(self._downstream_path)[1]
+                if extension == '.xlsx':
+                    from multi_tdl import generateFromExcel
+                    generateFromExcel(self._downstream_path)
+                else:
+                    pass
     def getSelectedFile(self, *args):
         _downstream_path = args[1][0]
         self.ids.selected_file.text = f"Selected File: {_downstream_path}"

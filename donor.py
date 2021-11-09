@@ -31,10 +31,10 @@ class Donor:
             sqlite_cursor.execute(sql_get_donor)
             record = sqlite_cursor.fetchone()
             if record:
-                self._donor_title = record[1]
-                self._donor_first = record[2]
-                self._donor_middle = record[3]
-                self._donor_last = record[4]
+                self._donor_title = record[1].strip()
+                self._donor_first = record[2].strip()
+                self._donor_middle = record[3].strip()
+                self._donor_last = record[4].strip()
                 self._donor_sufix = record[5]
                 self._env_line_1 = record[6]
                 self._donor_salut = record[7]
