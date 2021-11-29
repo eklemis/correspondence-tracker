@@ -1164,7 +1164,7 @@ QPushButton:clicked {
     <enum>QFrame::Sunken</enum>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>2</number>
    </property>
    <widget class="QWidget" name="pageWelcome">
     <widget class="QLabel" name="welcomeTitle">
