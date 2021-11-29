@@ -11,6 +11,12 @@ class UI(QMainWindow):
         self.ui.Logo.setPixmap(pixmap)
         self.ui.Logo.repaint()
 
+        #Connect filledTdlButton to display pageGenerateTDL page
+        self.ui.filledTdlButton.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.pageGenerateTDL))
+
+        #connect generateLabelButton to display pageGenerateLabel page
+        self.ui.generateLabelButton.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.pageGenerateLabel))
+
         self.show()
 
 app = QApplication(sys.argv)

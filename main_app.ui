@@ -46,10 +46,10 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>59</x>
+      <x>74</x>
       <y>40</y>
-      <width>111</width>
-      <height>51</height>
+      <width>81</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="font">
@@ -71,8 +71,8 @@
    <widget class="QLabel" name="Logo">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>40</y>
+      <x>160</x>
+      <y>30</y>
       <width>50</width>
       <height>52</height>
      </rect>
@@ -87,7 +87,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="filledTdlButton">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -102,63 +102,63 @@
        <colorrole role="WindowText">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>255</red>
-          <green>255</green>
-          <blue>255</blue>
+          <red>240</red>
+          <green>176</green>
+          <blue>31</blue>
          </color>
         </brush>
        </colorrole>
        <colorrole role="Button">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>240</red>
-          <green>176</green>
-          <blue>31</blue>
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
          </color>
         </brush>
        </colorrole>
        <colorrole role="Text">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>255</red>
-          <green>255</green>
-          <blue>255</blue>
+          <red>240</red>
+          <green>176</green>
+          <blue>31</blue>
          </color>
         </brush>
        </colorrole>
        <colorrole role="ButtonText">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>255</red>
-          <green>255</green>
-          <blue>255</blue>
+          <red>240</red>
+          <green>176</green>
+          <blue>31</blue>
          </color>
         </brush>
        </colorrole>
        <colorrole role="Base">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>240</red>
-          <green>176</green>
-          <blue>31</blue>
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
          </color>
         </brush>
        </colorrole>
        <colorrole role="Window">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>240</red>
-          <green>176</green>
-          <blue>31</blue>
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
          </color>
         </brush>
        </colorrole>
        <colorrole role="PlaceholderText">
         <brush brushstyle="NoBrush">
          <color alpha="128">
-          <red>255</red>
-          <green>255</green>
-          <blue>255</blue>
+          <red>240</red>
+          <green>176</green>
+          <blue>31</blue>
          </color>
         </brush>
        </colorrole>
@@ -167,63 +167,63 @@
        <colorrole role="WindowText">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>255</red>
-          <green>255</green>
-          <blue>255</blue>
+          <red>240</red>
+          <green>176</green>
+          <blue>31</blue>
          </color>
         </brush>
        </colorrole>
        <colorrole role="Button">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>240</red>
-          <green>176</green>
-          <blue>31</blue>
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
          </color>
         </brush>
        </colorrole>
        <colorrole role="Text">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>255</red>
-          <green>255</green>
-          <blue>255</blue>
+          <red>240</red>
+          <green>176</green>
+          <blue>31</blue>
          </color>
         </brush>
        </colorrole>
        <colorrole role="ButtonText">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>255</red>
-          <green>255</green>
-          <blue>255</blue>
+          <red>240</red>
+          <green>176</green>
+          <blue>31</blue>
          </color>
         </brush>
        </colorrole>
        <colorrole role="Base">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>240</red>
-          <green>176</green>
-          <blue>31</blue>
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
          </color>
         </brush>
        </colorrole>
        <colorrole role="Window">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>240</red>
-          <green>176</green>
-          <blue>31</blue>
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
          </color>
         </brush>
        </colorrole>
        <colorrole role="PlaceholderText">
         <brush brushstyle="NoBrush">
          <color alpha="128">
-          <red>255</red>
-          <green>255</green>
-          <blue>255</blue>
+          <red>240</red>
+          <green>176</green>
+          <blue>31</blue>
          </color>
         </brush>
        </colorrole>
@@ -232,63 +232,63 @@
        <colorrole role="WindowText">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>255</red>
-          <green>255</green>
-          <blue>255</blue>
+          <red>240</red>
+          <green>176</green>
+          <blue>31</blue>
          </color>
         </brush>
        </colorrole>
        <colorrole role="Button">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>240</red>
-          <green>176</green>
-          <blue>31</blue>
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
          </color>
         </brush>
        </colorrole>
        <colorrole role="Text">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>255</red>
-          <green>255</green>
-          <blue>255</blue>
+          <red>240</red>
+          <green>176</green>
+          <blue>31</blue>
          </color>
         </brush>
        </colorrole>
        <colorrole role="ButtonText">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>255</red>
-          <green>255</green>
-          <blue>255</blue>
+          <red>240</red>
+          <green>176</green>
+          <blue>31</blue>
          </color>
         </brush>
        </colorrole>
        <colorrole role="Base">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>240</red>
-          <green>176</green>
-          <blue>31</blue>
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
          </color>
         </brush>
        </colorrole>
        <colorrole role="Window">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>240</red>
-          <green>176</green>
-          <blue>31</blue>
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
          </color>
         </brush>
        </colorrole>
        <colorrole role="PlaceholderText">
         <brush brushstyle="NoBrush">
          <color alpha="128">
-          <red>255</red>
-          <green>255</green>
-          <blue>255</blue>
+          <red>240</red>
+          <green>176</green>
+          <blue>31</blue>
          </color>
         </brush>
        </colorrole>
@@ -309,14 +309,21 @@
      <bool>false</bool>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: #F0B01F;
-color: white;
-border: 0px;
-border-radius: 8px;
-
-text-align: left;
-padding-left: 15px;
-</string>
+     <string notr="true">QPushButton {
+    background-color: #FFFFFF;
+    color:#F0B01F;
+    padding: 2px;
+    border: 3px solid #F0B01F;
+    border-radius: 8px;
+}
+QPushButton:hover {
+    background-color:#F0B01F;
+ 	color: #FFFFFF;
+}
+QPushButton:clicked {
+    background-color:#F0B01F;
+ 	color: #FFFFFF;
+}</string>
     </property>
     <property name="text">
      <string>Auto Filled TDL</string>
@@ -331,10 +338,10 @@ padding-left: 15px;
    <widget class="QLabel" name="tamoDesc">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>100</y>
-      <width>311</width>
-      <height>51</height>
+      <x>50</x>
+      <y>90</y>
+      <width>191</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -345,7 +352,7 @@ padding-left: 15px;
      </font>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#f2cccc;&quot;&gt;Hi there! I’m &lt;/span&gt;&lt;span style=&quot; font-weight:600; color:#f2cccc;&quot;&gt;Tamo&lt;/span&gt;&lt;span style=&quot; color:#f2cccc;&quot;&gt;, your correspondence helper!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#f2cccc;&quot;&gt;Hi there! I’m &lt;/span&gt;&lt;span style=&quot; font-weight:600; color:#ffffff;&quot;&gt;Tamo&lt;/span&gt;&lt;span style=&quot; color:#f2cccc;&quot;&gt;, &lt;br&gt;your correspondence helper!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignHCenter|Qt::AlignTop</set>
@@ -354,7 +361,7 @@ padding-left: 15px;
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="generateLabelButton">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -423,9 +430,9 @@ padding-left: 15px;
        <colorrole role="PlaceholderText">
         <brush brushstyle="NoBrush">
          <color alpha="128">
-          <red>255</red>
-          <green>255</green>
-          <blue>255</blue>
+          <red>240</red>
+          <green>176</green>
+          <blue>31</blue>
          </color>
         </brush>
        </colorrole>
@@ -553,9 +560,9 @@ padding-left: 15px;
        <colorrole role="PlaceholderText">
         <brush brushstyle="NoBrush">
          <color alpha="128">
-          <red>255</red>
-          <green>255</green>
-          <blue>255</blue>
+          <red>240</red>
+          <green>176</green>
+          <blue>31</blue>
          </color>
         </brush>
        </colorrole>
@@ -576,13 +583,21 @@ padding-left: 15px;
      <bool>false</bool>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: White;
-color: #F0B01F;
-border: 0px;
-border-radius: 8px;
-text-align: left;
-
-padding-left: 15px;</string>
+     <string notr="true">QPushButton {
+    background-color: #FFFFFF;
+    color:#F0B01F;
+    padding: 2px;
+    border: 3px solid #F0B01F;
+    border-radius: 8px;
+}
+QPushButton:hover {
+    background-color:#F0B01F;
+ 	color: #FFFFFF;
+}
+QPushButton:clicked {
+    background-color:#F0B01F;
+ 	color: #FFFFFF;
+}</string>
     </property>
     <property name="text">
      <string>Generate Leter Labels</string>
@@ -816,17 +831,20 @@ padding-left: 15px;</string>
      <bool>false</bool>
     </property>
     <property name="styleSheet">
-     <string notr="true">QPushButton{
-background-color: White;
-color: #F0B01F;
-border: 2px solid transparent;
-border-radius: 8px;
-
-text-align:left;
-padding-left: 15px;
+     <string notr="true">QPushButton {
+    background-color: #FFFFFF;
+    color:#F0B01F;
+    padding: 2px;
+    border: 3px solid #F0B01F;
+    border-radius: 8px;
 }
-QPushButton:hover{
-	border:2px dashed red;
+QPushButton:hover {
+    background-color:#F0B01F;
+ 	color: #FFFFFF;
+}
+QPushButton:clicked {
+    background-color:#F0B01F;
+ 	color: #FFFFFF;
 }</string>
     </property>
     <property name="text">
@@ -1066,7 +1084,7 @@ QPushButton:hover{
     color:#F0B01F;
     padding: 2px;
     border: 3px solid #F0B01F;
-    border-radius: 10px;
+    border-radius: 8px;
 }
 QPushButton:hover {
     background-color:#F0B01F;
@@ -1090,50 +1108,45 @@ QPushButton:clicked {
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>224</x>
-      <y>240</y>
-      <width>41</width>
-      <height>33</height>
+      <x>130</x>
+      <y>670</y>
+      <width>45</width>
+      <height>45</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="ui_res/all_support_res.qrc">:/logoImage/images/button-expand.png</pixmap>
+     <pixmap>ui_res/images/woman.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="label_5">
+   <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>190</y>
+      <x>130</x>
+      <y>720</y>
       <width>41</width>
-      <height>33</height>
+      <height>16</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Gill Sans Infant Std</family>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: white;</string>
+    </property>
     <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap resource="ui_res/all_support_res.qrc">:/logoImage/images/button-expand.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
+     <string>Suciati</string>
     </property>
    </widget>
-   <zorder>label_5</zorder>
-   <zorder>label_2</zorder>
-   <zorder>label</zorder>
-   <zorder>Logo</zorder>
-   <zorder>pushButton</zorder>
-   <zorder>tamoDesc</zorder>
-   <zorder>pushButton_2</zorder>
-   <zorder>pushButton_3</zorder>
-   <zorder>pushButton_4</zorder>
   </widget>
   <widget class="QStackedWidget" name="stackedWidget">
    <property name="geometry">
@@ -1150,12 +1163,15 @@ QPushButton:clicked {
    <property name="frameShadow">
     <enum>QFrame::Sunken</enum>
    </property>
-   <widget class="QWidget" name="page">
-    <widget class="QLabel" name="label_6">
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <widget class="QWidget" name="pageWelcome">
+    <widget class="QLabel" name="welcomeTitle">
      <property name="geometry">
       <rect>
-       <x>30</x>
-       <y>50</y>
+       <x>20</x>
+       <y>40</y>
        <width>571</width>
        <height>41</height>
       </rect>
@@ -1175,11 +1191,11 @@ QPushButton:clicked {
       <string>Welcome to TAMO!</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_7">
+    <widget class="QLabel" name="welcomeDescription">
      <property name="geometry">
       <rect>
-       <x>30</x>
-       <y>93</y>
+       <x>20</x>
+       <y>80</y>
        <width>951</width>
        <height>31</height>
       </rect>
@@ -1198,7 +1214,102 @@ QPushButton:clicked {
      </property>
     </widget>
    </widget>
-   <widget class="QWidget" name="page_2"/>
+   <widget class="QWidget" name="pageGenerateTDL">
+    <widget class="QLabel" name="tdlTitle">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>40</y>
+       <width>571</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Gill Sans Infant Std</family>
+       <pointsize>28</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:white;</string>
+     </property>
+     <property name="text">
+      <string>Auto Filled TDL</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="tdlDescription">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>80</y>
+       <width>951</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Gill Sans Infant Std</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:#FFE9B8;</string>
+     </property>
+     <property name="text">
+      <string>This feature enables you to either create auto filled TDL page by entering one by one of specific child ids, or alternatively load those ids from a downstream file. It can be both options as well.</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="pageGenerateLabel">
+    <widget class="QLabel" name="generateLabelDescription">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>80</y>
+       <width>951</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Gill Sans Infant Std</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:#FFE9B8;</string>
+     </property>
+     <property name="text">
+      <string>This feature enables you to create label(s) on a pdf file using specific child ids you entered or loaded from an excel file. </string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="generateLabelTitle">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>40</y>
+       <width>571</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Gill Sans Infant Std</family>
+       <pointsize>28</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:white;</string>
+     </property>
+     <property name="text">
+      <string>Letter Label Generator</string>
+     </property>
+    </widget>
+   </widget>
   </widget>
  </widget>
  <resources>
