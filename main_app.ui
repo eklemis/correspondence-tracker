@@ -10,6 +10,18 @@
     <height>768</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>1366</width>
+    <height>768</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1366</width>
+    <height>768</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
@@ -804,13 +816,18 @@ padding-left: 15px;</string>
      <bool>false</bool>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: White;
+     <string notr="true">QPushButton{
+background-color: White;
 color: #F0B01F;
-border: 0px;
+border: 1px;
 border-radius: 8px;
 
 text-align:left;
-padding-left: 15px;</string>
+padding-left: 15px;
+}
+QPushButton:hover{
+	border:2px dashed red;
+}</string>
     </property>
     <property name="text">
      <string>Auto Filled RL</string>
@@ -837,63 +854,63 @@ padding-left: 15px;</string>
        <colorrole role="WindowText">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>240</red>
-          <green>176</green>
-          <blue>31</blue>
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
          </color>
         </brush>
        </colorrole>
        <colorrole role="Button">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>255</red>
-          <green>255</green>
-          <blue>255</blue>
+          <red>43</red>
+          <green>93</green>
+          <blue>209</blue>
          </color>
         </brush>
        </colorrole>
        <colorrole role="Text">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>240</red>
-          <green>176</green>
-          <blue>31</blue>
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
          </color>
         </brush>
        </colorrole>
        <colorrole role="ButtonText">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>240</red>
-          <green>176</green>
-          <blue>31</blue>
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
          </color>
         </brush>
        </colorrole>
        <colorrole role="Base">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>255</red>
-          <green>255</green>
-          <blue>255</blue>
+          <red>43</red>
+          <green>93</green>
+          <blue>209</blue>
          </color>
         </brush>
        </colorrole>
        <colorrole role="Window">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>255</red>
-          <green>255</green>
-          <blue>255</blue>
+          <red>43</red>
+          <green>93</green>
+          <blue>209</blue>
          </color>
         </brush>
        </colorrole>
        <colorrole role="PlaceholderText">
         <brush brushstyle="NoBrush">
          <color alpha="128">
-          <red>240</red>
-          <green>176</green>
-          <blue>31</blue>
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
          </color>
         </brush>
        </colorrole>
@@ -902,63 +919,63 @@ padding-left: 15px;</string>
        <colorrole role="WindowText">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>240</red>
-          <green>176</green>
-          <blue>31</blue>
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
          </color>
         </brush>
        </colorrole>
        <colorrole role="Button">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>255</red>
-          <green>255</green>
-          <blue>255</blue>
+          <red>43</red>
+          <green>93</green>
+          <blue>209</blue>
          </color>
         </brush>
        </colorrole>
        <colorrole role="Text">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>240</red>
-          <green>176</green>
-          <blue>31</blue>
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
          </color>
         </brush>
        </colorrole>
        <colorrole role="ButtonText">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>240</red>
-          <green>176</green>
-          <blue>31</blue>
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
          </color>
         </brush>
        </colorrole>
        <colorrole role="Base">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>255</red>
-          <green>255</green>
-          <blue>255</blue>
+          <red>43</red>
+          <green>93</green>
+          <blue>209</blue>
          </color>
         </brush>
        </colorrole>
        <colorrole role="Window">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>255</red>
-          <green>255</green>
-          <blue>255</blue>
+          <red>43</red>
+          <green>93</green>
+          <blue>209</blue>
          </color>
         </brush>
        </colorrole>
        <colorrole role="PlaceholderText">
         <brush brushstyle="NoBrush">
          <color alpha="128">
-          <red>240</red>
-          <green>176</green>
-          <blue>31</blue>
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
          </color>
         </brush>
        </colorrole>
@@ -967,63 +984,63 @@ padding-left: 15px;</string>
        <colorrole role="WindowText">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>240</red>
-          <green>176</green>
-          <blue>31</blue>
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
          </color>
         </brush>
        </colorrole>
        <colorrole role="Button">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>255</red>
-          <green>255</green>
-          <blue>255</blue>
+          <red>43</red>
+          <green>93</green>
+          <blue>209</blue>
          </color>
         </brush>
        </colorrole>
        <colorrole role="Text">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>240</red>
-          <green>176</green>
-          <blue>31</blue>
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
          </color>
         </brush>
        </colorrole>
        <colorrole role="ButtonText">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>240</red>
-          <green>176</green>
-          <blue>31</blue>
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
          </color>
         </brush>
        </colorrole>
        <colorrole role="Base">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>255</red>
-          <green>255</green>
-          <blue>255</blue>
+          <red>43</red>
+          <green>93</green>
+          <blue>209</blue>
          </color>
         </brush>
        </colorrole>
        <colorrole role="Window">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>255</red>
-          <green>255</green>
-          <blue>255</blue>
+          <red>43</red>
+          <green>93</green>
+          <blue>209</blue>
          </color>
         </brush>
        </colorrole>
        <colorrole role="PlaceholderText">
         <brush brushstyle="NoBrush">
          <color alpha="128">
-          <red>240</red>
-          <green>176</green>
-          <blue>31</blue>
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
          </color>
         </brush>
        </colorrole>
@@ -1033,7 +1050,10 @@ padding-left: 15px;</string>
     <property name="font">
      <font>
       <family>Gill Sans Infant Std</family>
-      <pointsize>14</pointsize>
+      <pointsize>-1</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
       <stylestrategy>PreferAntialias</stylestrategy>
      </font>
     </property>
@@ -1044,13 +1064,19 @@ padding-left: 15px;</string>
      <bool>false</bool>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: White;
-color: #F0B01F;
-border: 0px;
-border-radius: 8px;
-
-text-align:left;
-padding-left: 15px;</string>
+     <string notr="true">QPushButton {
+    background-color: #2B5DD1;
+    color: #FFFFFF;
+    border-style: outset;
+    padding: 2px;
+    font: bold 20px;
+    border-width: 6px;
+    border-radius: 10px;
+    border-color: #2752B8;
+}
+QPushButton:hover {
+    background-color: lightgreen;
+}</string>
     </property>
     <property name="text">
      <string>Database Update</string>
@@ -1081,44 +1107,6 @@ padding-left: 15px;</string>
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="label_3">
-    <property name="geometry">
-     <rect>
-      <x>220</x>
-      <y>290</y>
-      <width>50</width>
-      <height>33</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap resource="ui_res/all_support_res.qrc">:/logoImage/images/button-expand.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_4">
-    <property name="geometry">
-     <rect>
-      <x>246</x>
-      <y>340</y>
-      <width>21</width>
-      <height>32</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap resource="ui_res/all_support_res.qrc">:/logoImage/images/expand-white.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
@@ -1139,8 +1127,6 @@ padding-left: 15px;</string>
     </property>
    </widget>
    <zorder>label_5</zorder>
-   <zorder>label_4</zorder>
-   <zorder>label_3</zorder>
    <zorder>label_2</zorder>
    <zorder>label</zorder>
    <zorder>Logo</zorder>
