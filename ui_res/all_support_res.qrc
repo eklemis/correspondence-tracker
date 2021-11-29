@@ -1,0 +1,10 @@
+<RCC>
+  <qresource prefix="logoImage">
+    <file>images/expand-white.png</file>
+    <file>images/button-expand.png</file>
+    <file>images/dark-red-triangle.png</file>
+    <file>images/red-triangle.png</file>
+    <file>images/paper-clip.png</file>
+    <file>images/SC-Child-White.png</file>
+  </qresource>
+</RCC>

@@ -35,9 +35,9 @@
     <property name="geometry">
      <rect>
       <x>59</x>
-      <y>20</y>
+      <y>40</y>
       <width>111</width>
-      <height>91</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="font">
@@ -1166,26 +1166,50 @@ padding-left: 15px;</string>
     <enum>QFrame::Sunken</enum>
    </property>
    <widget class="QWidget" name="page">
-    <widget class="QPushButton" name="pushButton_5">
+    <widget class="QLabel" name="label_6">
      <property name="geometry">
       <rect>
-       <x>70</x>
-       <y>412</y>
-       <width>151</width>
-       <height>51</height>
+       <x>30</x>
+       <y>50</y>
+       <width>571</width>
+       <height>41</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <family>Gill Sans Infant Std</family>
+       <pointsize>28</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
      <property name="styleSheet">
-      <string notr="true">QPushButton::hover
-{
-background-color : lightgreen;
-}</string>
+      <string notr="true">color:white;</string>
      </property>
      <property name="text">
-      <string>PushButton</string>
+      <string>Welcome to TAMO!</string>
      </property>
-     <property name="flat">
-      <bool>false</bool>
+    </widget>
+    <widget class="QLabel" name="label_7">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>93</y>
+       <width>951</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Gill Sans Infant Std</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:#FFE9B8;</string>
+     </property>
+     <property name="text">
+      <string>Please choose feature from feature list on the left side and make your daily work simpler and done fast with high quality! </string>
      </property>
     </widget>
    </widget>
