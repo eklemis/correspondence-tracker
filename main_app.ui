@@ -1146,7 +1146,7 @@ QPushButton:clicked {
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../../.designer/backup/ui_res/images/woman.png</pixmap>
+     <pixmap resource="ui_res/all_support_res.qrc">:/logoImage/images/woman.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -1696,7 +1696,6 @@ QPushButton:hover{
  </widget>
  <resources>
   <include location="ui_res/all_support_res.qrc"/>
-  <include location="../../.designer/backup/ui_res/all_support_res.qrc"/>
  </resources>
  <connections/>
 </ui>

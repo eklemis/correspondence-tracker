@@ -1,6 +1,8 @@
+from pathlib import Path
+
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QPixmap, QFont
-from PyQt5.QtWidgets import QMainWindow, QApplication, QFileDialog
+from PyQt5.QtWidgets import QMainWindow, QApplication, QFileDialog, QMessageBox
 from PyQt5 import uic, QtWidgets
 import sys
 
@@ -36,7 +38,16 @@ class UI(QMainWindow):
 
     def openExcelChildIds(self):
         fname = QFileDialog.getOpenFileName(self, 'Open file',
-                                            '', "Excel file (*.xlsx)")
+                                            '', "Excel file (*.xlsx *.xls)")
+        fPath = Path(fname[0])
+        from label_generator import Labels
+        labels = Labels()
+        is_correct_file = labels.labelFromExcelFile(fPath)
+        message = "The file you selected contain no child id!"
+        if is_correct_file:
+            message = "You select correct file!"
+        QMessageBox.about(self, "Info", message)
+
     def loadDataForLabels(self):
         sponsorships = [
             {"childId":"11301345","childName":"Sample Child Name","donorId":"654545456", "donorName":"Hyu Jeen", "childStatus":"Ineligible - Not Participating"},
@@ -64,9 +75,7 @@ class UI(QMainWindow):
             self.ui.allChildIds.setItem(row, 0, checkBoxItem)
             row+=1
 
-'''f = QApplication.font('Gill Sans Infant Std');
-f.setStyleStrategy(QFont.PreferAntialias);
-QApplication.setFont(f);'''
+
 app = QApplication(sys.argv)
 
 window = UI()

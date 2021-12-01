@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="logoImage">
+    <file>images/woman.png</file>
     <file>images/expand-white.png</file>
     <file>images/button-expand.png</file>
     <file>images/dark-red-triangle.png</file>
