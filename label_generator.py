@@ -1,3 +1,5 @@
+import pathlib
+
 import openpyxl
 from fpdf import FPDF
 import os
@@ -9,8 +11,7 @@ class Labels():
         self.formatedSponsorships = []
     def addLabel(self, of_child_id):
         row = Sponsorship(of_child_id)
-        print (f"Create sponsorship {row}")
-        if row["donorCountry"] == "USA":
+        if row.getDonor().getCountry() == "USA":
             formatedRow = {
                 "childId": row.getChild().getChildId(),
                 "childName": row.getChild().getFullName(),
@@ -26,7 +27,6 @@ class Labels():
                 "includedThis": True
             }
             self.formatedSponsorships.append(formatedRow)
-            print("Added formated row to sponsorhip!")
 
     def removeLabel(self, of_chil_id):
         pass
@@ -65,12 +65,10 @@ class Labels():
 
         while str(sheet[f'{col}{curr_row}'].value) != '' and str(sheet[f'{col}{curr_row}'].value).startswith("113"):
             value = str(sheet[f'{col}{curr_row}'].value)
-            print("find value: " + value)
             if value.startswith("113"):
                 self.addLabel(value)
 
             curr_row += 1
-        print("Pull ids from excel done!");
 
     def labelFromExcelFile(self, path):
         workbook = openpyxl.load_workbook(path)
@@ -103,15 +101,23 @@ class Labels():
         boxSpace = aFourPage["boxSpace"]
         labelPerRow = aFourPage["labelPerRow"]
 
-        print("load variables done!")
         col_counter = 0
         for row in self.formatedSponsorships:
             col_counter += 1
             if (count == 1) or (count % 17 == 0):
+                #reinitialize x, y, col_counter
+                x = aFourPage["xStart"]
+                y = aFourPage["yStart"]
+
                 #Page setup
                 pdf.add_page()
-                pdf.add_font(font, "", font_source, uni=True)
-                pdf.set_font(font, "", font_size)
+                #set font based on platform
+                import platform
+                if platform.system() == "Darwin":
+                    pdf.set_font("Helvetica", "B", font_size)
+                elif platform.system() == "Windows":
+                    pdf.add_font(font, "", font_source, uni=True)
+                    pdf.set_font(font, "", font_size)
 
             #Orginizing items on created page
             #Draw box
@@ -146,12 +152,12 @@ class Labels():
                 col_counter = 0
             count += 1
         pdf.output(f'Labels_from_file.pdf', "F")
-        _path = os.getcwd() + f"\\Labels_from_file.pdf"
-
+        _path = os.path.join(os.getcwd(),"Labels_from_file.pdf")
+        print(f"File created: {_path}")
+        import webbrowser
         import threading
-        t = threading.Thread(target=os.system, args=(f'cmd /c {_path}',))
+        t = threading.Thread(target=webbrowser.open, args=(r'file:///'+_path, ))
         t.start()
-        #os.system(f'cmd /c {_path}')
 
     def produceOtherSizePage(self):
         pass
