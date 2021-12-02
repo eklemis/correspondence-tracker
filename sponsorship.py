@@ -23,7 +23,6 @@ class Sponsorship:
             record = sqlite_cursor.fetchone()
             if record:
                 self._donor = Donor(record[0])
-                print(f"find donor with id: {record[0]}")
             else:
                 self._donor = Donor("")
         else:
