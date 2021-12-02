@@ -47,12 +47,11 @@ class Donor:
                 if record[12] != "nan":
                     self._postal_code = record[12]
 
-                self._cmit_nbr = record[13]
-                self._enr_seq = record[14]
-                self._ddb_stat_code = record[15]
+                self._cmit_nbr = record[14]
+                self._enr_seq = record[15]
+                self._ddb_stat_code = record[17]
                 self._status_date = record[16]
 
-                print(f"sponsor with name {self.getTitleFirstName()} created")
             else:
                 self._donor_id = "No active donor"
 
@@ -81,7 +80,9 @@ class Donor:
     def getPostalCode(self):
         return self._postal_code
     def getDCE(self):
-        return f"{self._donor_id}-{self._cmit_nbr}-{self._enr_seq}"
+        value = f"{self._donor_id}-{self._cmit_nbr}-{self._enr_seq}"
+        print(value)
+        return value
     def getAddressLineOne(self):
         return self._adrs_line_1
     def lastStatus(self):
