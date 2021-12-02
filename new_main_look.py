@@ -15,7 +15,11 @@ class UI(QMainWindow):
         self.ui.Logo.setPixmap(pixmap)
         self.ui.Logo.repaint()
         #set default page
-        self.ui.stackedWidget.setCurrentIndex(0);
+        self.ui.stackedWidget.setCurrentIndex(0)
+
+        '''
+        ### Below are all variabels and functions needed to make pageGenerateTDL page work!
+        '''
 
         #Connect filledTdlButton to display pageGenerateTDL page
         self.ui.filledTdlButton.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.pageGenerateTDL))
@@ -29,51 +33,47 @@ class UI(QMainWindow):
         self.ui.allChildIds.setColumnWidth(2, 200)
         self.ui.allChildIds.setColumnWidth(3, 100)
         self.ui.allChildIds.setColumnWidth(4, 200)
-        self.ui.allChildIds.setColumnWidth(5, 273)
+        self.ui.allChildIds.setColumnWidth(5, 260)
 
         #open file dialog when button load click
         self.ui.loadExcelBtn.clicked.connect(self.openExcelChildIds)
-        self.loadDataForLabels()
+
+        '''
+        ### End of all variabels and functions setup for pageGenerateTDL page!
+        '''
+
         self.show()
 
     def openExcelChildIds(self):
         fname = QFileDialog.getOpenFileName(self, 'Open file',
-                                            '', "Excel file (*.xlsx *.xls)")
+                                            '/Users/ek_solution', "Excel file (*.xlsx *.xls)")
         fPath = Path(fname[0])
         from label_generator import Labels
         labels = Labels()
         is_correct_file = labels.labelFromExcelFile(fPath)
-        message = "The file you selected contain no child id!"
-        if is_correct_file:
-            message = "You select correct file!"
-        QMessageBox.about(self, "Info", message)
 
-    def loadDataForLabels(self):
-        sponsorships = [
-            {"childId":"11301345","childName":"Sample Child Name","donorId":"654545456", "donorName":"Hyu Jeen", "childStatus":"Ineligible - Not Participating"},
-            {"childId": "11301346", "childName": "Sample Child Name", "donorId": "654545456", "donorName": "Hyu Jeen",
-             "childStatus": "Eligible"},
-            {"childId": "11301347", "childName": "Sample Child Name", "donorId": "654545456", "donorName": "Hyu Jeen",
-             "childStatus": "Eligible"},
-            {"childId": "11301348", "childName": "Sample Child Name", "donorId": "654545456", "donorName": "Hyu Jeen",
-             "childStatus": "Ineligible - Not Participating"}
-        ]
-        row = 0
+        if not is_correct_file:
+            message = "The file you selected contain no child id!"
+            QMessageBox.about(self, "Info", message)
+        else:
+            selectedSponsorships = labels.getFormattedData()
 
-        for sponsorhip in sponsorships:
-            self.ui.allChildIds.setRowCount(row + 1)
-            self.ui.allChildIds.setItem(row, 1, QtWidgets.QTableWidgetItem(sponsorhip["childId"]))
-            self.ui.allChildIds.setItem(row, 2, QtWidgets.QTableWidgetItem(sponsorhip["childName"]))
-            self.ui.allChildIds.setItem(row, 3, QtWidgets.QTableWidgetItem(sponsorhip["donorId"]))
-            self.ui.allChildIds.setItem(row, 4, QtWidgets.QTableWidgetItem(sponsorhip["donorName"]))
-            self.ui.allChildIds.setItem(row, 5, QtWidgets.QTableWidgetItem(sponsorhip["childStatus"]))
-            checkBoxItem = QtWidgets.QTableWidgetItem("Item")
-            if row % 2 == 0:
-                checkBoxItem.setCheckState(Qt.Checked)
-            else:
+            row = 0
+
+            for sponsorhip in selectedSponsorships:
+                self.ui.allChildIds.setRowCount(row + 1)
+                self.ui.allChildIds.setItem(row, 1, QtWidgets.QTableWidgetItem(sponsorhip["childId"]))
+                self.ui.allChildIds.setItem(row, 2, QtWidgets.QTableWidgetItem(sponsorhip["childName"]))
+                self.ui.allChildIds.setItem(row, 3, QtWidgets.QTableWidgetItem(sponsorhip["donorId"]))
+                self.ui.allChildIds.setItem(row, 4, QtWidgets.QTableWidgetItem(sponsorhip["donorName"]))
+                self.ui.allChildIds.setItem(row, 5, QtWidgets.QTableWidgetItem(sponsorhip["childStatus"]))
+                checkBoxItem = QtWidgets.QTableWidgetItem("Item")
                 checkBoxItem.setCheckState(Qt.Unchecked)
-            self.ui.allChildIds.setItem(row, 0, checkBoxItem)
-            row+=1
+
+                self.ui.allChildIds.setItem(row, 0, checkBoxItem)
+                row += 1
+
+
 
 
 app = QApplication(sys.argv)

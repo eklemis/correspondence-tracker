@@ -7,8 +7,10 @@ class Labels():
     def __init__(self):
         self.__all_labels = []
     def addLabel(self, of_child_id):
-        print(f"Adding id:{of_child_id}")
         self.__all_labels.append(Sponsorship(of_child_id))
+
+    def removeLabel(self, of_chil_id):
+        pass
 
     '''
     Below are all function needed to load child id(s) from excel file
@@ -27,8 +29,8 @@ class Labels():
             curr_col = col_start
             while not found and curr_col<col_limit:
                 value_to_check = sheet[f'{curr_col}{curr_row}'].value
-                print(f"Test value: {value_to_check}")
-                found = "113" in str(value_to_check)
+                found = str(value_to_check).startswith("113")
+
                 if found:
                     found_col = curr_col
                     found_row = curr_row
@@ -37,16 +39,17 @@ class Labels():
                 curr_col = chr(ord(curr_col)+1)
 
             curr_row += 1
-
         return found_col, found_row
     def __pullIdFromsheet(self, sheet, start_row, selected_col):
         curr_row = start_row
         col = selected_col
 
-        while str(sheet[f'{col}{curr_row}']) != '':
-            value = str(sheet[f'{col}{curr_row}'])
-            if "113" in value:
+        while str(sheet[f'{col}{curr_row}'].value) != '' and str(sheet[f'{col}{curr_row}'].value).startswith("113"):
+            value = str(sheet[f'{col}{curr_row}'].value)
+            if value.startswith("113"):
                 self.addLabel(value)
+            curr_row += 1
+        print("Pull ids from excel done!");
 
     def labelFromExcelFile(self, path):
         workbook = openpyxl.load_workbook(path)
@@ -62,3 +65,17 @@ class Labels():
             return True
         else:
             return False
+
+    def getFormattedData(self):
+        selectedSponsorships = []
+        for row in self.__all_labels:
+            formatedRow = {
+                "childId": row.getChild().getChildId(),
+                "childName": row.getChild().getFullName(),
+                "donorId": row.getDonor().getId(),
+                "donorName": row.getDonor().getTitleFirstName(),
+                "childStatus": row.getChild().getStatus()
+            }
+            selectedSponsorships.append(formatedRow)
+
+        return selectedSponsorships
