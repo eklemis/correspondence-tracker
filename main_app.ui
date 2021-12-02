@@ -1352,7 +1352,7 @@ font-size: 16px;</string>
      <property name="geometry">
       <rect>
        <x>50</x>
-       <y>230</y>
+       <y>190</y>
        <width>918</width>
        <height>1</height>
       </rect>
@@ -1364,8 +1364,8 @@ font-size: 16px;</string>
     <widget class="QPushButton" name="loadExcelBtn">
      <property name="geometry">
       <rect>
-       <x>529</x>
-       <y>173</y>
+       <x>50</x>
+       <y>140</y>
        <width>255</width>
        <height>32</height>
       </rect>
@@ -1403,8 +1403,8 @@ QPushButton:hover{
     <widget class="QTextEdit" name="textEdit">
      <property name="geometry">
       <rect>
-       <x>829</x>
-       <y>173</y>
+       <x>350</x>
+       <y>140</y>
        <width>111</width>
        <height>32</height>
       </rect>
@@ -1432,21 +1432,21 @@ QTextEdit:focus{
 	background-color: #FFFFFF;
 }
 QTextEdit:hover{
-	border: 2px solid #DA2C27;
+	border: 2px dashed #DA2C27;
 }</string>
      </property>
      <property name="frameShape">
       <enum>QFrame::NoFrame</enum>
      </property>
      <property name="placeholderText">
-      <string>Enter Child Id</string>
+      <string>Add Child Id</string>
      </property>
     </widget>
     <widget class="QPushButton" name="pushButton_2">
      <property name="geometry">
       <rect>
-       <x>940</x>
-       <y>173</y>
+       <x>460</x>
+       <y>140</y>
        <width>32</width>
        <height>32</height>
       </rect>
@@ -1475,8 +1475,8 @@ QPushButton:hover{
     <widget class="QLabel" name="label_4">
      <property name="geometry">
       <rect>
-       <x>799</x>
-       <y>180</y>
+       <x>320</x>
+       <y>147</y>
        <width>21</width>
        <height>16</height>
       </rect>
@@ -1503,7 +1503,7 @@ QPushButton:hover{
      <property name="geometry">
       <rect>
        <x>50</x>
-       <y>250</y>
+       <y>220</y>
        <width>571</width>
        <height>21</height>
       </rect>
@@ -1527,7 +1527,7 @@ QPushButton:hover{
      <property name="geometry">
       <rect>
        <x>50</x>
-       <y>272</y>
+       <y>242</y>
        <width>921</width>
        <height>21</height>
       </rect>
@@ -1549,10 +1549,16 @@ QPushButton:hover{
      <property name="geometry">
       <rect>
        <x>50</x>
-       <y>313</y>
+       <y>273</y>
        <width>918</width>
-       <height>331</height>
+       <height>311</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>12</pointsize>
+      </font>
      </property>
      <property name="styleSheet">
       <string notr="true">QTableWidget{
@@ -1562,7 +1568,16 @@ QPushButton:hover{
 }</string>
      </property>
      <property name="frameShape">
-      <enum>QFrame::NoFrame</enum>
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="autoScrollMargin">
+      <number>10</number>
      </property>
      <property name="sortingEnabled">
       <bool>true</bool>
@@ -1571,13 +1586,19 @@ QPushButton:hover{
       <bool>false</bool>
      </attribute>
      <attribute name="horizontalHeaderMinimumSectionSize">
-      <number>15</number>
+      <number>20</number>
+     </attribute>
+     <attribute name="horizontalHeaderStretchLastSection">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="verticalHeaderVisible">
+      <bool>false</bool>
      </attribute>
      <attribute name="verticalHeaderMinimumSectionSize">
-      <number>32</number>
+      <number>30</number>
      </attribute>
      <attribute name="verticalHeaderDefaultSectionSize">
-      <number>32</number>
+      <number>30</number>
      </attribute>
      <attribute name="verticalHeaderStretchLastSection">
       <bool>true</bool>
@@ -1585,6 +1606,28 @@ QPushButton:hover{
      <column>
       <property name="text">
        <string/>
+      </property>
+      <property name="font">
+       <font>
+        <family>Material Icons Sharp</family>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <property name="background">
+       <color>
+        <red>255</red>
+        <green>213</green>
+        <blue>118</blue>
+       </color>
+      </property>
+      <property name="foreground">
+       <brush brushstyle="NoBrush">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
       </property>
      </column>
      <column>
@@ -1594,15 +1637,22 @@ QPushButton:hover{
       <property name="font">
        <font>
         <family>Roboto</family>
-        <pointsize>10</pointsize>
+        <pointsize>13</pointsize>
        </font>
+      </property>
+      <property name="background">
+       <color>
+        <red>255</red>
+        <green>213</green>
+        <blue>118</blue>
+       </color>
       </property>
       <property name="foreground">
        <brush brushstyle="SolidPattern">
         <color alpha="255">
-         <red>0</red>
-         <green>0</green>
-         <blue>0</blue>
+         <red>161</red>
+         <green>119</green>
+         <blue>22</blue>
         </color>
        </brush>
       </property>
@@ -1616,6 +1666,22 @@ QPushButton:hover{
         <family>Roboto</family>
        </font>
       </property>
+      <property name="background">
+       <color>
+        <red>255</red>
+        <green>213</green>
+        <blue>118</blue>
+       </color>
+      </property>
+      <property name="foreground">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>161</red>
+         <green>119</green>
+         <blue>22</blue>
+        </color>
+       </brush>
+      </property>
      </column>
      <column>
       <property name="text">
@@ -1625,6 +1691,22 @@ QPushButton:hover{
        <font>
         <family>Roboto</family>
        </font>
+      </property>
+      <property name="background">
+       <color>
+        <red>255</red>
+        <green>213</green>
+        <blue>118</blue>
+       </color>
+      </property>
+      <property name="foreground">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>161</red>
+         <green>119</green>
+         <blue>22</blue>
+        </color>
+       </brush>
       </property>
      </column>
      <column>
@@ -1636,6 +1718,22 @@ QPushButton:hover{
         <family>Roboto</family>
        </font>
       </property>
+      <property name="background">
+       <color>
+        <red>255</red>
+        <green>213</green>
+        <blue>118</blue>
+       </color>
+      </property>
+      <property name="foreground">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>161</red>
+         <green>119</green>
+         <blue>22</blue>
+        </color>
+       </brush>
+      </property>
      </column>
      <column>
       <property name="text">
@@ -1646,13 +1744,29 @@ QPushButton:hover{
         <family>Roboto</family>
        </font>
       </property>
+      <property name="background">
+       <color>
+        <red>255</red>
+        <green>213</green>
+        <blue>118</blue>
+       </color>
+      </property>
+      <property name="foreground">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>161</red>
+         <green>119</green>
+         <blue>22</blue>
+        </color>
+       </brush>
+      </property>
      </column>
     </widget>
     <widget class="QWidget" name="widget" native="true">
      <property name="geometry">
       <rect>
        <x>50</x>
-       <y>643</y>
+       <y>580</y>
        <width>918</width>
        <height>32</height>
       </rect>
@@ -1667,29 +1781,274 @@ QPushButton:hover{
      <widget class="QLabel" name="label_5">
       <property name="geometry">
        <rect>
-        <x>15</x>
+        <x>10</x>
         <y>7</y>
-        <width>181</width>
+        <width>191</width>
         <height>16</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>Roboto</family>
-        <weight>75</weight>
-        <bold>true</bold>
+        <weight>50</weight>
+        <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
        <string notr="true">QLabel{
 	color:#A17716;
-	font-weight: bold;
+	font-weight: regular;
 }</string>
       </property>
       <property name="text">
        <string>Action for the selected records:</string>
       </property>
      </widget>
+     <widget class="QWidget" name="widget_2" native="true">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>7</y>
+        <width>1</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QWidget{
+	background-color:#D0B4B4;
+}</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>4</y>
+        <width>32</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Roboto</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+background-color: #DA2C27;
+color: white;
+font-family: 'Roboto';
+text-align: center;
+font-size: 13px;
+border-radius: 5px;
+}
+QPushButton:hover{
+	border: 2px solid #DA2C27;
+	background-color:#FF0700;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>ui_res/images/delete_24px.svg</normaloff>ui_res/images/delete_24px.svg</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_5">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>4</y>
+        <width>111</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+background-color: #DA2C27;
+color: white;
+font-family: 'Roboto';
+text-align: center;
+font-size: 13px;
+border-radius: 5px;
+}
+QPushButton:hover{
+	border: 2px solid #DA2C27;
+	background-color:#FF0700;
+}</string>
+      </property>
+      <property name="text">
+       <string>Remove all</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>ui_res/images/delete_sweep_24px.svg</normaloff>ui_res/images/delete_sweep_24px.svg</iconset>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="pushButton_6">
+     <property name="geometry">
+      <rect>
+       <x>53</x>
+       <y>276</y>
+       <width>20</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+background-color: transparent;
+color: white;
+font-family: 'Roboto';
+text-align: center;
+font-size: 13px;
+border-radius: 5px;
+}
+QPushButton:hover{
+	border: 1px solid #FFD576;
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>ui_res/images/check_box_outline_blank_white_24dp.svg</normaloff>ui_res/images/check_box_outline_blank_white_24dp.svg</iconset>
+     </property>
+    </widget>
+    <widget class="QLabel" name="generateLabelTitle_3">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>648</y>
+       <width>571</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>14</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:#FFF7E3;</string>
+     </property>
+     <property name="text">
+      <string>Choose paper size and generate your label!</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="generateLabelDescription_3">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>670</y>
+       <width>921</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:#FFE9B8;</string>
+     </property>
+     <property name="text">
+      <string>Labels will be generated from all selected records on above table.  Please make sure you've selected id(s) correctly!</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="printToPdfBtn">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>700</y>
+       <width>255</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>-1</pointsize>
+      </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+background-color: #DA2C27;
+color: white;
+font-family: 'Roboto';
+text-align: center;
+font-size: 16px;
+border-radius: 5px;
+}
+QPushButton:hover{
+	border: 2px solid #DA2C27;
+	background-color:#FF0700;
+}</string>
+     </property>
+     <property name="text">
+      <string>A4 Landscape</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>ui_res/images/note_white_24dp.svg</normaloff>ui_res/images/note_white_24dp.svg</iconset>
+     </property>
+     <property name="flat">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="printToPdfBtn_2">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>700</y>
+       <width>255</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>-1</pointsize>
+      </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+background-color: #DA2C27;
+color: white;
+font-family: 'Roboto';
+text-align: center;
+font-size: 16px;
+border-radius: 5px;
+}
+QPushButton:hover{
+	border: 2px solid #DA2C27;
+	background-color:#FF0700;
+}</string>
+     </property>
+     <property name="text">
+      <string>76 x 38 mm Paper</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>ui_res/images/description_white_24dp.svg</normaloff>ui_res/images/description_white_24dp.svg</iconset>
+     </property>
+     <property name="flat">
+      <bool>false</bool>
+     </property>
     </widget>
    </widget>
   </widget>
