@@ -1,13 +1,32 @@
 import openpyxl
 from fpdf import FPDF
 import os
+
 from sponsorship import Sponsorship
 
 class Labels():
     def __init__(self):
-        self.__all_labels = []
+        self.formatedSponsorships = []
     def addLabel(self, of_child_id):
-        self.__all_labels.append(Sponsorship(of_child_id))
+        row = Sponsorship(of_child_id)
+        print (f"Create sponsorship {row}")
+        if row["donorCountry"] == "USA":
+            formatedRow = {
+                "childId": row.getChild().getChildId(),
+                "childName": row.getChild().getFullName(),
+                "donorId": row.getDonor().getId(),
+                "donorName": row.getDonor().getTitleFirstName(),
+                "childStatus": row.getChild().getStatus(),
+                "donorDCE": row.getDonor().getDCE(),
+                "donorEnvLineOne": row.getDonor().getEnvLineOne(),
+                "donorAddress": row.getDonor().getAddressLineOne(),
+                "donorCityStateProv": row.getDonor().getCity() + " " + row.getDonor().getStateProv(),
+                "donorPostalCode": row.getDonor().getPostalCode(),
+                "donorCountry": row.getDonor().getCountry(),
+                "includedThis": True
+            }
+            self.formatedSponsorships.append(formatedRow)
+            print("Added formated row to sponsorhip!")
 
     def removeLabel(self, of_chil_id):
         pass
@@ -46,8 +65,10 @@ class Labels():
 
         while str(sheet[f'{col}{curr_row}'].value) != '' and str(sheet[f'{col}{curr_row}'].value).startswith("113"):
             value = str(sheet[f'{col}{curr_row}'].value)
+            print("find value: " + value)
             if value.startswith("113"):
                 self.addLabel(value)
+
             curr_row += 1
         print("Pull ids from excel done!");
 
@@ -66,16 +87,71 @@ class Labels():
         else:
             return False
 
-    def getFormattedData(self):
-        selectedSponsorships = []
-        for row in self.__all_labels:
-            formatedRow = {
-                "childId": row.getChild().getChildId(),
-                "childName": row.getChild().getFullName(),
-                "donorId": row.getDonor().getId(),
-                "donorName": row.getDonor().getTitleFirstName(),
-                "childStatus": row.getChild().getStatus()
-            }
-            selectedSponsorships.append(formatedRow)
 
-        return selectedSponsorships
+    def getFormattedData(self):
+        return self.formatedSponsorships
+
+    def produceAFourLandscapePage(self):
+        pdf = FPDF(orientation='P', unit='mm', format='A4')
+        count = 1
+        from label_page_setting import font_source, font, font_size, aFourPage
+
+        x = aFourPage["xStart"]
+        y = aFourPage["yStart"]
+        w = aFourPage["labelWidth"]
+        h = aFourPage["labelHeight"]
+        boxSpace = aFourPage["boxSpace"]
+        labelPerRow = aFourPage["labelPerRow"]
+
+        print("load variables done!")
+        col_counter = 0
+        for row in self.formatedSponsorships:
+            col_counter += 1
+            if (count == 1) or (count % 17 == 0):
+                #Page setup
+                pdf.add_page()
+                pdf.add_font(font, "", font_source, uni=True)
+                pdf.set_font(font, "", font_size)
+
+            #Orginizing items on created page
+            #Draw box
+            pdf.rect(x, y, w, h)
+
+            #Displaying Items in label box
+            strX = x + aFourPage["boxPadding"]
+
+            strY = y + aFourPage["boxPadding"] + aFourPage["lineHeight"]
+            pdf.text(strX, strY, str(row["donorDCE"]))
+
+            strY += aFourPage["lineHeight"] + aFourPage["boxPadding"]
+            pdf.text(strX, strY, str(row["donorEnvLineOne"]))
+
+            strY += aFourPage["lineHeight"] + aFourPage["boxPadding"]
+            pdf.text(strX, strY, str(row["donorAddress"]))
+            if str(row["donorCityStateProv"]).strip() != "":
+                strY += aFourPage["lineHeight"] + aFourPage["boxPadding"]
+                pdf.text(strX, strY, str(row["donorCityStateProv"]))
+            if str(row["donorPostalCode"]).strip() != "":
+                strY += aFourPage["lineHeight"] + aFourPage["boxPadding"]
+                pdf.text(strX, strY, str(row["donorPostalCode"]))
+
+            strY += aFourPage["lineHeight"] + aFourPage["boxPadding"]
+            pdf.text(strX, strY, str(row["donorCountry"]))
+
+            x += w + boxSpace
+            # move to new row when current column reach labelPerRow limit
+            if col_counter == labelPerRow:
+                x = aFourPage["xStart"]
+                y += h + boxSpace
+                col_counter = 0
+            count += 1
+        pdf.output(f'Labels_from_file.pdf', "F")
+        _path = os.getcwd() + f"\\Labels_from_file.pdf"
+
+        import threading
+        t = threading.Thread(target=os.system, args=(f'cmd /c {_path}',))
+        t.start()
+        #os.system(f'cmd /c {_path}')
+
+    def produceOtherSizePage(self):
+        pass

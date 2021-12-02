@@ -1542,7 +1542,7 @@ QPushButton:hover{
       <string notr="true">color:#FFE9B8;</string>
      </property>
      <property name="text">
-      <string>Bellow are all Child Ids you’ve load or entered!</string>
+      <string>Bellow are all Child Ids with US Donors you’ve loaded or entered!</string>
      </property>
     </widget>
     <widget class="QTableWidget" name="allChildIds">
@@ -1637,7 +1637,9 @@ QPushButton:hover{
       <property name="font">
        <font>
         <family>Roboto</family>
-        <pointsize>13</pointsize>
+        <pointsize>9</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
        </font>
       </property>
       <property name="background">
@@ -1712,6 +1714,32 @@ QPushButton:hover{
      <column>
       <property name="text">
        <string>Donor Name</string>
+      </property>
+      <property name="font">
+       <font>
+        <family>Roboto</family>
+       </font>
+      </property>
+      <property name="background">
+       <color>
+        <red>255</red>
+        <green>213</green>
+        <blue>118</blue>
+       </color>
+      </property>
+      <property name="foreground">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>161</red>
+         <green>119</green>
+         <blue>22</blue>
+        </color>
+       </brush>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Dnr. Country</string>
       </property>
       <property name="font">
        <font>
@@ -1961,7 +1989,7 @@ QPushButton:hover{
       <string notr="true">color:#FFE9B8;</string>
      </property>
      <property name="text">
-      <string>Labels will be generated from all selected records on above table.  Please make sure you've selected id(s) correctly!</string>
+      <string>Labels will be generated from all records on above table.  Please make sure you've added all records you want, and removed all unwanted records first!</string>
      </property>
     </widget>
     <widget class="QPushButton" name="printToPdfBtn">
