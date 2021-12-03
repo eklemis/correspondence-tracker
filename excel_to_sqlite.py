@@ -131,6 +131,7 @@ def parsingDonorAll():
 
     sql_drop_donorall_table = """ DROP TABLE IF EXISTS donor_all """
 
+
     if sqlite_cnx is not None:
         sqlite_cursor.execute(sql_drop_donorall_table)
         sqlite_cursor.execute(sql_create_donorall_table)
@@ -153,7 +154,85 @@ def parsingDonorAll():
     sqlite_cursor.executemany(sql_insertmanydonorall,result)
     sqlite_cnx.commit()
 
+
+def parsingCorrHist() :
+    sql_create_corrhist_table = """ CREATE TABLE IF NOT EXISTS corr_hist(
+            donor_id text,
+            corr_nbr text,
+            hist_date text,
+            add_date text,
+            corr_stat_code text
+        ) """
+
+    sql_drop_corrhist_table = """ DROP TABLE IF EXISTS corr_hist """
+
+    '''sql_addnewcolumn_corrhist_table = """ ALTER TABLE corr_hist
+        ADD COLUMN curr_date DATE default CURRENT_DATE """ '''
+
+    if sqlite_cnx is not None:
+        sqlite_cursor.execute(sql_drop_corrhist_table)
+        sqlite_cursor.execute(sql_create_corrhist_table)
+        #sqlite_cursor.execute(sql_addnewcolumn_corrhist_table)
+
+    # retrive all data from CHILDREN_ALL.xlsx file
+    corrHistfile = os.path.join(excels_dir, "CORR_HIST.xlsx")
+    df = pd.read_excel(corrHistfile, sheet_name='Sheet1')
+    #df['curr_date'] = pd.to_datetime('now')
+    #df['rem_day']= (df['add_date'] - df['curr_date'])
+    #df['rem_day'] = pd.Series(df['rem_day']).dt.days
+    df = df.filter(['donor_id', 'corr_nbr', 'hist_date', 'add_date', 'corr_stat_code'])
+    #df['StatusDate'] = df['StatusDate'].astype(str)
+    df = df.astype(str)
+    df = df.drop_duplicates()
+    print(df.dtypes)
+
+    # convert dataframe to tuples
+    records = df.to_records(index=False)
+    # put tuples to list
+    result = list(records)
+
+    # push all records to children_all table on corr_manager_local.db
+    # print(result)
+    sql_insertmanycorrhist = "INSERT INTO corr_hist values (?,?,?,?,?)"
+    sqlite_cursor.executemany(sql_insertmanycorrhist, result)
+    sqlite_cnx.commit()
+
+
+def parsingCorrStatCode():
+    sql_create_corrstatcode_table = """ CREATE TABLE IF NOT EXISTS corr_stat_code(
+                corr_stat_code text,
+                corr_stat_descr text
+            ) """
+
+    sql_drop_corrstatcode_table = """ DROP TABLE IF EXISTS corr_stat_code """
+
+    if sqlite_cnx is not None:
+        sqlite_cursor.execute(sql_drop_corrstatcode_table)
+        sqlite_cursor.execute(sql_create_corrstatcode_table)
+
+    # retrive all data from CHILDREN_ALL.xlsx file
+    corrStatCodefile = os.path.join(excels_dir, "CORR_STAT_CODE.xlsx")
+    df = pd.read_excel(corrStatCodefile, sheet_name='Sheet1')
+    df = df.filter(['corr_stat_code', 'corr_stat_descr'])
+    # df['StatusDate'] = df['StatusDate'].astype(str)
+    df = df.astype(str)
+    df = df.drop_duplicates()
+    print(df.dtypes)
+
+    # convert dataframe to tuples
+    records = df.to_records(index=False)
+    # put tuples to list
+    result = list(records)
+
+    # push all records to children_all table on corr_manager_local.db
+    # print(result)
+    sql_insertmanycorrstatcode = "INSERT INTO corr_stat_code values (?,?)"
+    sqlite_cursor.executemany(sql_insertmanycorrstatcode, result)
+    sqlite_cnx.commit()
+
 parsingChildrenAll()
 parsingMasterDonors()
 parsingMasterEnr()
 parsingDonorAll()
+parsingCorrHist()
+parsingCorrStatCode()
