@@ -90,8 +90,7 @@ class Labels():
         return self.formatedSponsorships
 
     def produceAFourLandscapePage(self):
-        pdf = FPDF(orientation='P', unit='mm', format='A4')
-        count = 1
+        pdf = FPDF(orientation='L', unit='mm', format='A4')
         from label_page_setting import font_source, font, font_size, aFourPage
 
         x = aFourPage["xStart"]
@@ -99,20 +98,38 @@ class Labels():
         w = aFourPage["labelWidth"]
         h = aFourPage["labelHeight"]
         boxSpace = aFourPage["boxSpace"]
-        labelPerRow = aFourPage["labelPerRow"]
+
+        # Page setup
+        pdf.add_page()
+        # set font based on platform
+        import platform
+        if platform.system() == "Darwin":
+            pdf.set_font("Helvetica", "B", font_size)
+        elif platform.system() == "Windows":
+            pdf.add_font(font, "", font_source, uni=True)
+            pdf.set_font(font, "", font_size)
 
         col_counter = 0
+        item_count = 0
         for row in self.formatedSponsorships:
             col_counter += 1
-            if (count == 1) or (count % 17 == 0):
+            item_count += 1
+            # move to new row when current column reach labelPerRow limit
+            if col_counter > aFourPage["labelPerRow"]:
+                x = aFourPage["xStart"]
+                y += h + boxSpace
+                col_counter = 1
+            # move to next page when total item in current page reach aFourPage["perPage"]
+            if item_count > aFourPage["perPage"]:
                 #reinitialize x, y, col_counter
                 x = aFourPage["xStart"]
                 y = aFourPage["yStart"]
+                col_counter = 1
+                item_count = 1
 
                 #Page setup
                 pdf.add_page()
                 #set font based on platform
-                import platform
                 if platform.system() == "Darwin":
                     pdf.set_font("Helvetica", "B", font_size)
                 elif platform.system() == "Windows":
@@ -129,28 +146,23 @@ class Labels():
             strY = y + aFourPage["boxPadding"] + aFourPage["lineHeight"]
             pdf.text(strX, strY, str(row["donorDCE"]))
 
-            strY += aFourPage["lineHeight"] + aFourPage["boxPadding"]
+            strY += aFourPage["lineHeight"]
             pdf.text(strX, strY, str(row["donorEnvLineOne"]))
 
-            strY += aFourPage["lineHeight"] + aFourPage["boxPadding"]
+            strY += aFourPage["lineHeight"]
             pdf.text(strX, strY, str(row["donorAddress"]))
             if str(row["donorCityStateProv"]).strip() != "":
-                strY += aFourPage["lineHeight"] + aFourPage["boxPadding"]
+                strY += aFourPage["lineHeight"]
                 pdf.text(strX, strY, str(row["donorCityStateProv"]))
             if str(row["donorPostalCode"]).strip() != "":
-                strY += aFourPage["lineHeight"] + aFourPage["boxPadding"]
+                strY += aFourPage["lineHeight"]
                 pdf.text(strX, strY, str(row["donorPostalCode"]))
 
-            strY += aFourPage["lineHeight"] + aFourPage["boxPadding"]
+            strY += aFourPage["lineHeight"]
             pdf.text(strX, strY, str(row["donorCountry"]))
 
             x += w + boxSpace
-            # move to new row when current column reach labelPerRow limit
-            if col_counter == labelPerRow:
-                x = aFourPage["xStart"]
-                y += h + boxSpace
-                col_counter = 0
-            count += 1
+
         pdf.output(f'Labels_from_file.pdf', "F")
         _path = os.path.join(os.getcwd(),"Labels_from_file.pdf")
         print(f"File created: {_path}")
