@@ -1,10 +1,13 @@
 <RCC>
   <qresource prefix="logoImage">
+    <file>images/woman.png</file>
     <file>images/expand-white.png</file>
     <file>images/button-expand.png</file>
     <file>images/dark-red-triangle.png</file>
     <file>images/red-triangle.png</file>
     <file>images/paper-clip.png</file>
     <file>images/SC-Child-White.png</file>
+    <file>images/icon.ico</file>
+    <file>images/delete_24px.svg</file>
   </qresource>
 </RCC>

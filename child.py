@@ -30,6 +30,8 @@ class Child:
         return self._latest_status
     def getChildId(self):
         return self._child_id
+    def getFullName(self):
+        return self._child_name
     def getFirstName(self):
         #only return child first name
         #if first name only have 1 letter, return first name+next word in the name

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form</class>
- <widget class="QWidget" name="Form">
+ <class>MainUI</class>
+ <widget class="QWidget" name="MainUI">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -23,7 +23,11 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Tamo - Correspondence Helper</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="ui_res/all_support_res.qrc">
+    <normaloff>:/logoImage/images/icon.ico</normaloff>:/logoImage/images/icon.ico</iconset>
   </property>
   <widget class="QFrame" name="frame">
    <property name="geometry">
@@ -46,9 +50,9 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>74</x>
-      <y>40</y>
-      <width>81</width>
+      <x>80</x>
+      <y>30</y>
+      <width>111</width>
       <height>41</height>
      </rect>
     </property>
@@ -71,8 +75,8 @@
    <widget class="QLabel" name="Logo">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>30</y>
+      <x>190</x>
+      <y>24</y>
       <width>50</width>
       <height>52</height>
      </rect>
@@ -90,8 +94,8 @@
    <widget class="QPushButton" name="filledTdlButton">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>190</y>
+      <x>60</x>
+      <y>250</y>
       <width>221</width>
       <height>32</height>
      </rect>
@@ -297,8 +301,8 @@
     </property>
     <property name="font">
      <font>
-      <family>Gill Sans Infant Std</family>
-      <pointsize>14</pointsize>
+      <family>Roboto</family>
+      <pointsize>12</pointsize>
       <stylestrategy>PreferAntialias</stylestrategy>
      </font>
     </property>
@@ -313,8 +317,14 @@
     background-color: #FFFFFF;
     color:#F0B01F;
     padding: 2px;
-    border: 3px solid #F0B01F;
-    border-radius: 8px;
+	border: 3px solid #FFFFFF;
+    border-right: 5px solid #F0B01F;
+    border-top-left-radius: 8px;
+ 	border-bottom-left-radius: 8px;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+	text-align: left;
+	padding-left: 15px;
 }
 QPushButton:hover {
     background-color:#F0B01F;
@@ -338,16 +348,16 @@ QPushButton:clicked {
    <widget class="QLabel" name="tamoDesc">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>90</y>
-      <width>191</width>
-      <height>31</height>
+      <x>60</x>
+      <y>80</y>
+      <width>201</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>Gill Sans Infant Std</family>
-      <pointsize>12</pointsize>
+      <family>Roboto</family>
+      <pointsize>10</pointsize>
       <stylestrategy>PreferAntialias</stylestrategy>
      </font>
     </property>
@@ -364,8 +374,8 @@ QPushButton:clicked {
    <widget class="QPushButton" name="generateLabelButton">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>240</y>
+      <x>60</x>
+      <y>300</y>
       <width>221</width>
       <height>32</height>
      </rect>
@@ -571,8 +581,8 @@ QPushButton:clicked {
     </property>
     <property name="font">
      <font>
-      <family>Gill Sans Infant Std</family>
-      <pointsize>14</pointsize>
+      <family>Roboto</family>
+      <pointsize>12</pointsize>
       <stylestrategy>PreferAntialias</stylestrategy>
      </font>
     </property>
@@ -587,8 +597,14 @@ QPushButton:clicked {
     background-color: #FFFFFF;
     color:#F0B01F;
     padding: 2px;
-    border: 3px solid #F0B01F;
-    border-radius: 8px;
+	border: 3px solid #FFFFFF;
+    border-right: 5px solid #F0B01F;
+    border-top-left-radius: 8px;
+ 	border-bottom-left-radius: 8px;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+	text-align: left;
+	padding-left: 15px;
 }
 QPushButton:hover {
     background-color:#F0B01F;
@@ -612,8 +628,8 @@ QPushButton:clicked {
    <widget class="QPushButton" name="pushButton_3">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>290</y>
+      <x>60</x>
+      <y>350</y>
       <width>221</width>
       <height>32</height>
      </rect>
@@ -819,8 +835,8 @@ QPushButton:clicked {
     </property>
     <property name="font">
      <font>
-      <family>Gill Sans Infant Std</family>
-      <pointsize>14</pointsize>
+      <family>Roboto</family>
+      <pointsize>12</pointsize>
       <stylestrategy>PreferAntialias</stylestrategy>
      </font>
     </property>
@@ -835,8 +851,14 @@ QPushButton:clicked {
     background-color: #FFFFFF;
     color:#F0B01F;
     padding: 2px;
-    border: 3px solid #F0B01F;
-    border-radius: 8px;
+	border: 3px solid #FFFFFF;
+    border-right: 5px solid #F0B01F;
+    border-top-left-radius: 8px;
+ 	border-bottom-left-radius: 8px;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+	text-align: left;
+	padding-left: 15px;
 }
 QPushButton:hover {
     background-color:#F0B01F;
@@ -860,8 +882,8 @@ QPushButton:clicked {
    <widget class="QPushButton" name="pushButton_4">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>340</y>
+      <x>60</x>
+      <y>400</y>
       <width>221</width>
       <height>32</height>
      </rect>
@@ -1067,8 +1089,8 @@ QPushButton:clicked {
     </property>
     <property name="font">
      <font>
-      <family>Gill Sans Infant Std</family>
-      <pointsize>14</pointsize>
+      <family>Roboto</family>
+      <pointsize>12</pointsize>
       <stylestrategy>PreferAntialias</stylestrategy>
      </font>
     </property>
@@ -1083,8 +1105,14 @@ QPushButton:clicked {
     background-color: #FFFFFF;
     color:#F0B01F;
     padding: 2px;
-    border: 3px solid #F0B01F;
-    border-radius: 8px;
+	border: 3px solid #FFFFFF;
+    border-right: 5px solid #F0B01F;
+    border-top-left-radius: 8px;
+ 	border-bottom-left-radius: 8px;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+	text-align: left;
+	padding-left: 15px;
 }
 QPushButton:hover {
     background-color:#F0B01F;
@@ -1109,7 +1137,7 @@ QPushButton:clicked {
     <property name="geometry">
      <rect>
       <x>130</x>
-      <y>670</y>
+      <y>680</y>
       <width>45</width>
       <height>45</height>
      </rect>
@@ -1118,7 +1146,7 @@ QPushButton:clicked {
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>ui_res/images/woman.png</pixmap>
+     <pixmap resource="ui_res/all_support_res.qrc">:/logoImage/images/woman.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -1127,24 +1155,29 @@ QPushButton:clicked {
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>720</y>
-      <width>41</width>
+      <x>128</x>
+      <y>729</y>
+      <width>51</width>
       <height>16</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>Gill Sans Infant Std</family>
-      <weight>75</weight>
-      <bold>true</bold>
+      <family>Roboto</family>
+      <pointsize>-1</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: white;</string>
+     <string notr="true">color: white;
+font-size: 16px;</string>
     </property>
     <property name="text">
      <string>Suciati</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
   </widget>
@@ -1156,6 +1189,12 @@ QPushButton:clicked {
      <width>1051</width>
      <height>768</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="styleSheet">
     <string notr="true">background-color:#F0B01F;</string>
@@ -1170,7 +1209,7 @@ QPushButton:clicked {
     <widget class="QLabel" name="welcomeTitle">
      <property name="geometry">
       <rect>
-       <x>20</x>
+       <x>50</x>
        <y>40</y>
        <width>571</width>
        <height>41</height>
@@ -1178,7 +1217,7 @@ QPushButton:clicked {
      </property>
      <property name="font">
       <font>
-       <family>Gill Sans Infant Std</family>
+       <family>Roboto</family>
        <pointsize>28</pointsize>
        <weight>75</weight>
        <bold>true</bold>
@@ -1194,7 +1233,7 @@ QPushButton:clicked {
     <widget class="QLabel" name="welcomeDescription">
      <property name="geometry">
       <rect>
-       <x>20</x>
+       <x>50</x>
        <y>80</y>
        <width>951</width>
        <height>31</height>
@@ -1202,8 +1241,8 @@ QPushButton:clicked {
      </property>
      <property name="font">
       <font>
-       <family>Gill Sans Infant Std</family>
-       <pointsize>12</pointsize>
+       <family>Roboto</family>
+       <pointsize>11</pointsize>
       </font>
      </property>
      <property name="styleSheet">
@@ -1218,7 +1257,7 @@ QPushButton:clicked {
     <widget class="QLabel" name="tdlTitle">
      <property name="geometry">
       <rect>
-       <x>20</x>
+       <x>50</x>
        <y>40</y>
        <width>571</width>
        <height>41</height>
@@ -1242,7 +1281,7 @@ QPushButton:clicked {
     <widget class="QLabel" name="tdlDescription">
      <property name="geometry">
       <rect>
-       <x>20</x>
+       <x>50</x>
        <y>80</y>
        <width>951</width>
        <height>31</height>
@@ -1266,7 +1305,7 @@ QPushButton:clicked {
     <widget class="QLabel" name="generateLabelDescription">
      <property name="geometry">
       <rect>
-       <x>20</x>
+       <x>50</x>
        <y>80</y>
        <width>951</width>
        <height>31</height>
@@ -1274,8 +1313,8 @@ QPushButton:clicked {
      </property>
      <property name="font">
       <font>
-       <family>Gill Sans Infant Std</family>
-       <pointsize>12</pointsize>
+       <family>Roboto</family>
+       <pointsize>10</pointsize>
       </font>
      </property>
      <property name="styleSheet">
@@ -1288,15 +1327,15 @@ QPushButton:clicked {
     <widget class="QLabel" name="generateLabelTitle">
      <property name="geometry">
       <rect>
-       <x>20</x>
+       <x>50</x>
        <y>40</y>
        <width>571</width>
-       <height>41</height>
+       <height>31</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <family>Gill Sans Infant Std</family>
+       <family>Roboto</family>
        <pointsize>28</pointsize>
        <weight>75</weight>
        <bold>true</bold>
@@ -1307,6 +1346,736 @@ QPushButton:clicked {
      </property>
      <property name="text">
       <string>Letter Label Generator</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="horizontalSeparator" native="true">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>190</y>
+       <width>918</width>
+       <height>1</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:#D99E19;</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="loadExcelBtn">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>140</y>
+       <width>255</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>-1</pointsize>
+      </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+background-color: #DA2C27;
+color: white;
+font-family: 'Roboto';
+text-align: center;
+font-size: 16px;
+border-radius: 5px;
+}
+QPushButton:hover{
+	border: 2px solid #DA2C27;
+	background-color:#FF0700;
+}</string>
+     </property>
+     <property name="text">
+      <string>Load child ids from an excel file</string>
+     </property>
+     <property name="flat">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="textEdit">
+     <property name="geometry">
+      <rect>
+       <x>350</x>
+       <y>140</y>
+       <width>111</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>-1</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QTextEdit{
+	background-color: #FFE099;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	text-align: left;
+	padding-left: 5px;
+	padding-top: 3px;
+	color: #691613;
+	font-size: 16px;
+	font-family: 'Roboto';
+}
+QTextEdit:focus{
+	border: 1px solid #FFE099;
+	background-color: #FFFFFF;
+}
+QTextEdit:hover{
+	border: 2px dashed #DA2C27;
+}</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="placeholderText">
+      <string>Add Child Id</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_2">
+     <property name="geometry">
+      <rect>
+       <x>460</x>
+       <y>140</y>
+       <width>32</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+	background-color: #DA2C27;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	color: white;
+	font-size: 12px;
+	font-weight: bold;
+}
+QPushButton:hover{
+	border: 2px solid #DA2C27;
+	background-color:#FF0700;
+}</string>
+     </property>
+     <property name="text">
+      <string>+</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>147</y>
+       <width>21</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>11</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel{
+	color:#FFE9B8;
+	font-weight: bold;
+}</string>
+     </property>
+     <property name="text">
+      <string>Or</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="generateLabelTitle_2">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>220</y>
+       <width>571</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>14</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:#FFF7E3;</string>
+     </property>
+     <property name="text">
+      <string>Loaded and Entered Child Ids</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="generateLabelDescription_2">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>242</y>
+       <width>921</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:#FFE9B8;</string>
+     </property>
+     <property name="text">
+      <string>Bellow are all Child Ids with US Donors you’ve loaded or entered!</string>
+     </property>
+    </widget>
+    <widget class="QTableWidget" name="allChildIds">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>273</y>
+       <width>918</width>
+       <height>311</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QTableWidget{
+	background-color: #F8F0F0;
+	border-color:#FFD576;
+	border-top-left-radius: 3px;
+}</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="autoScrollMargin">
+      <number>10</number>
+     </property>
+     <property name="sortingEnabled">
+      <bool>true</bool>
+     </property>
+     <attribute name="horizontalHeaderCascadingSectionResizes">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="horizontalHeaderMinimumSectionSize">
+      <number>20</number>
+     </attribute>
+     <attribute name="horizontalHeaderStretchLastSection">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="verticalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderMinimumSectionSize">
+      <number>30</number>
+     </attribute>
+     <attribute name="verticalHeaderDefaultSectionSize">
+      <number>30</number>
+     </attribute>
+     <attribute name="verticalHeaderStretchLastSection">
+      <bool>true</bool>
+     </attribute>
+     <column>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="font">
+       <font>
+        <family>Material Icons Sharp</family>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <property name="background">
+       <color>
+        <red>255</red>
+        <green>213</green>
+        <blue>118</blue>
+       </color>
+      </property>
+      <property name="foreground">
+       <brush brushstyle="NoBrush">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Child Id</string>
+      </property>
+      <property name="font">
+       <font>
+        <family>Roboto</family>
+        <pointsize>9</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="background">
+       <color>
+        <red>255</red>
+        <green>213</green>
+        <blue>118</blue>
+       </color>
+      </property>
+      <property name="foreground">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>161</red>
+         <green>119</green>
+         <blue>22</blue>
+        </color>
+       </brush>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Child Name</string>
+      </property>
+      <property name="font">
+       <font>
+        <family>Roboto</family>
+       </font>
+      </property>
+      <property name="background">
+       <color>
+        <red>255</red>
+        <green>213</green>
+        <blue>118</blue>
+       </color>
+      </property>
+      <property name="foreground">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>161</red>
+         <green>119</green>
+         <blue>22</blue>
+        </color>
+       </brush>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Donor Id</string>
+      </property>
+      <property name="font">
+       <font>
+        <family>Roboto</family>
+       </font>
+      </property>
+      <property name="background">
+       <color>
+        <red>255</red>
+        <green>213</green>
+        <blue>118</blue>
+       </color>
+      </property>
+      <property name="foreground">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>161</red>
+         <green>119</green>
+         <blue>22</blue>
+        </color>
+       </brush>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Donor Name</string>
+      </property>
+      <property name="font">
+       <font>
+        <family>Roboto</family>
+       </font>
+      </property>
+      <property name="background">
+       <color>
+        <red>255</red>
+        <green>213</green>
+        <blue>118</blue>
+       </color>
+      </property>
+      <property name="foreground">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>161</red>
+         <green>119</green>
+         <blue>22</blue>
+        </color>
+       </brush>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Dnr. Country</string>
+      </property>
+      <property name="font">
+       <font>
+        <family>Roboto</family>
+       </font>
+      </property>
+      <property name="background">
+       <color>
+        <red>255</red>
+        <green>213</green>
+        <blue>118</blue>
+       </color>
+      </property>
+      <property name="foreground">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>161</red>
+         <green>119</green>
+         <blue>22</blue>
+        </color>
+       </brush>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Child Last Status</string>
+      </property>
+      <property name="font">
+       <font>
+        <family>Roboto</family>
+       </font>
+      </property>
+      <property name="background">
+       <color>
+        <red>255</red>
+        <green>213</green>
+        <blue>118</blue>
+       </color>
+      </property>
+      <property name="foreground">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>161</red>
+         <green>119</green>
+         <blue>22</blue>
+        </color>
+       </brush>
+      </property>
+     </column>
+    </widget>
+    <widget class="QWidget" name="widget" native="true">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>580</y>
+       <width>918</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QWidget{
+	background-color: #FFD576;
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+}</string>
+     </property>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>7</y>
+        <width>191</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Roboto</family>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+	color:#A17716;
+	font-weight: regular;
+}</string>
+      </property>
+      <property name="text">
+       <string>Action for the selected records:</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="widget_2" native="true">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>7</y>
+        <width>1</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QWidget{
+	background-color:#D0B4B4;
+}</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>4</y>
+        <width>32</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Roboto</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+background-color: #DA2C27;
+color: white;
+font-family: 'Roboto';
+text-align: center;
+font-size: 13px;
+border-radius: 5px;
+}
+QPushButton:hover{
+	border: 2px solid #DA2C27;
+	background-color:#FF0700;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>ui_res/images/delete_24px.svg</normaloff>ui_res/images/delete_24px.svg</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_5">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>4</y>
+        <width>111</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+background-color: #DA2C27;
+color: white;
+font-family: 'Roboto';
+text-align: center;
+font-size: 13px;
+border-radius: 5px;
+}
+QPushButton:hover{
+	border: 2px solid #DA2C27;
+	background-color:#FF0700;
+}</string>
+      </property>
+      <property name="text">
+       <string>Remove all</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>ui_res/images/delete_sweep_24px.svg</normaloff>ui_res/images/delete_sweep_24px.svg</iconset>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="pushButton_6">
+     <property name="geometry">
+      <rect>
+       <x>53</x>
+       <y>276</y>
+       <width>20</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+background-color: transparent;
+color: white;
+font-family: 'Roboto';
+text-align: center;
+font-size: 13px;
+border-radius: 5px;
+}
+QPushButton:hover{
+	border: 1px solid #FFD576;
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>ui_res/images/check_box_outline_blank_white_24dp.svg</normaloff>ui_res/images/check_box_outline_blank_white_24dp.svg</iconset>
+     </property>
+    </widget>
+    <widget class="QLabel" name="generateLabelTitle_3">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>648</y>
+       <width>571</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>14</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:#FFF7E3;</string>
+     </property>
+     <property name="text">
+      <string>Choose paper size and generate your label!</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="generateLabelDescription_3">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>670</y>
+       <width>921</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:#FFE9B8;</string>
+     </property>
+     <property name="text">
+      <string>Labels will be generated from all records on above table.  Please make sure you've added all records you want, and removed all unwanted records first!</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="printToPdfBtn">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>700</y>
+       <width>255</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>-1</pointsize>
+      </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+background-color: #DA2C27;
+color: white;
+font-family: 'Roboto';
+text-align: center;
+font-size: 16px;
+border-radius: 5px;
+}
+QPushButton:hover{
+	border: 2px solid #DA2C27;
+	background-color:#FF0700;
+}</string>
+     </property>
+     <property name="text">
+      <string>A4 Landscape</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>ui_res/images/note_white_24dp.svg</normaloff>ui_res/images/note_white_24dp.svg</iconset>
+     </property>
+     <property name="flat">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="printToPdfBtn_2">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>700</y>
+       <width>255</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>-1</pointsize>
+      </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+background-color: #DA2C27;
+color: white;
+font-family: 'Roboto';
+text-align: center;
+font-size: 16px;
+border-radius: 5px;
+}
+QPushButton:hover{
+	border: 2px solid #DA2C27;
+	background-color:#FF0700;
+}</string>
+     </property>
+     <property name="text">
+      <string>76 x 38 mm Paper</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>ui_res/images/description_white_24dp.svg</normaloff>ui_res/images/description_white_24dp.svg</iconset>
+     </property>
+     <property name="flat">
+      <bool>false</bool>
      </property>
     </widget>
    </widget>
