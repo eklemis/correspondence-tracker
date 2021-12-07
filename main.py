@@ -10,7 +10,7 @@ from kivy.uix.popup import Popup
 from kivy.uix.screenmanager import Screen, ScreenManager
 import os
 
-#from notification_rl import NotificationRL
+from notification_rl import NotificationRL
 
 from barcode import Barcode
 from tdl import TDL
@@ -114,9 +114,10 @@ class CorrManagerApp(App):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    #notifikasi = NotificationRL()
-    #notifikasi.show()
 
     CorrManagerApp().run()
+
+    notifikasi = NotificationRL()
+    notifikasi.show()
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
