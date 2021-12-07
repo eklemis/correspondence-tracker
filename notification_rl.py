@@ -10,7 +10,7 @@ from databasesqlite import sqlite_cnx, sqlite_cursor
 class NotificationRL:
 
     def __init__(self):
-        self.message = "Hi, \nYou have " +str(self.getCorrLate())+ " correspondence almost late (5 days left)"
+        self.message = "Hi, \nYou have " +str(self.getCorrLate())+ " correspondence almost late (5 days left) \nClick here to update!"
         #self.message = message
 
 
@@ -30,11 +30,21 @@ class NotificationRL:
         '''
 
 
-        sql_get_remdate = f"select ((julianday(current_date) - julianday(add_date))*(-1)) as remday from corr_hist where remday >=-5"
+        sql_get_remdate = f"select children_all.full_name, children_all.child_id, corr_hist.donor_id, corr_hist.hist_date, corr_stat_code.corr_stat_descr, corr_hist.corr_nbr, ((julianday(current_date) - julianday(corr_hist.add_date))*(-1)) as days_late " \
+                          f"from children_all join donor_all on children_all.child_id = donor_all.child_id " \
+                          f"join corr_hist on donor_all.donor_id = corr_hist.donor_id " \
+                          f"join corr_stat_code on corr_hist.corr_stat_code = corr_stat_code.corr_stat_code " \
+                          f"where days_late >= -35 and corr_stat_descr = 'Received at FO/initiation date'"
+
 
         if sqlite_cnx is not None:
             sqlite_cursor.execute(sql_get_remdate)
+            columns = [desc[0] for desc in sqlite_cursor.description]
             record = sqlite_cursor.fetchall()
+            df = pd.DataFrame(list(record), columns=columns)
+            writer = pd.ExcelWriter('D:\\data-corr_manager\\Book Entry.xlsx')
+            df.to_excel(writer, sheet_name='Sheet1')
+            writer.save()
             #for row in record :
                 #print (row)
 
@@ -42,7 +52,7 @@ class NotificationRL:
 
 
     def clickableNotif(self):
-        path = "D:\\data-corr_manager\\CORR_HIST.xlsx"
+        path = "D:\\data-corr_manager\\Book Entry.xlsx"
         subprocess.Popen([path], shell=True)
         #webbrowser.open_new(corr_late)
 
@@ -54,8 +64,8 @@ class NotificationRL:
 
 
 #notifikasi = NotificationRL("Hi,\nYou have 5 correspondence almost late (3 days left).\nPlease update their status!")
-#notifikasi = NotificationRL()
-#notifikasi.show()
+notifikasi = NotificationRL()
+notifikasi.show()
 
 
 
