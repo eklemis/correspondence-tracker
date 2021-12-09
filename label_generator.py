@@ -11,11 +11,12 @@ class Labels():
         self.formatedSponsorships = []
     def addLabel(self, of_child_id):
         row = Sponsorship(of_child_id)
-        if row.getDonor().getCountry() == "USA":
+        if (row.getDonor().getCountry() != "KR"):
             formatedRow = {
                 "childId": row.getChild().getChildId(),
                 "childName": row.getChild().getFullName(),
                 "donorId": row.getDonor().getId(),
+                "donorFirst": row.getDonor().getFirstName(),
                 "donorName": row.getDonor().getTitleFirstName(),
                 "childStatus": row.getChild().getStatus(),
                 "donorDCE": row.getDonor().getDCE(),
@@ -26,6 +27,9 @@ class Labels():
                 "donorCountry": row.getDonor().getCountry(),
                 "includedThis": True
             }
+            if row.getDonor().isOrganization:
+                formatedRow["donorEnvLineOne"] = row.getDonor().getSalutation()
+                print(f"Donor {row.getDonor().getId()} is Organization")
             self.formatedSponsorships.append(formatedRow)
 
     def removeLabel(self, of_chil_id):
@@ -69,6 +73,8 @@ class Labels():
                 self.addLabel(value)
 
             curr_row += 1
+    def __orderByFirstName(self):
+        self.formatedSponsorships = sorted(self.formatedSponsorships, key=lambda d: d["donorFirst"])
 
     def labelFromExcelFile(self, path):
         workbook = openpyxl.load_workbook(path)
@@ -109,6 +115,7 @@ class Labels():
             pdf.add_font(font, "", font_source, uni=True)
             pdf.set_font(font, "", font_size)
 
+        self.__orderByFirstName()
         col_counter = 0
         item_count = 0
         for row in self.formatedSponsorships:
