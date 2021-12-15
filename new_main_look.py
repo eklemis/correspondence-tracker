@@ -1,8 +1,11 @@
-
 from PyQt5.QtGui import QPixmap, QIcon
 from PyQt5.QtWidgets import QMainWindow, QApplication
 from PyQt5 import uic
 import sys
+
+# import all needed views
+from labelgenerator_view import LabelGeneratorView
+from rlgenerator_view import RlGeneratorView
 
 
 class UI(QMainWindow):
@@ -13,13 +16,10 @@ class UI(QMainWindow):
         '''
         ### General Application Setups
         '''
-        pixmap = QPixmap('ui_res/images/SC-Child-White.png')
-        avatarPix = QPixmap('ui_res/images/woman.png')
-        self.ui.avatar.setPixmap(avatarPix)
+        self.ui.avatar.setPixmap(QPixmap('ui_res/images/woman.png'))
+        self.ui.Logo.setPixmap(QPixmap('ui_res/images/SC-Child-White.png'))
         self.ui.setWindowIcon(QIcon('ui_res/images/icon.ico'))
 
-        self.ui.Logo.setPixmap(pixmap)
-        self.ui.Logo.repaint()
         # set default page
         self.ui.stackedWidget.setCurrentIndex(0)
         '''
@@ -38,7 +38,6 @@ class UI(QMainWindow):
         '''
         ### Below are all variables and functions needed to make pageGenerateLabel page work!
         '''
-        from labelgenerator_view import LabelGeneratorView
         labelGeneratorView = LabelGeneratorView(self.ui)
         '''
         ### End of all variables and functions setup for pageGenerateLabel page!
@@ -47,7 +46,6 @@ class UI(QMainWindow):
         '''
         ### Below are all variables and functions needed to make pageGenerateRL page work!
         '''
-        from rlgenerator_view import RlGeneratorView
         rlGeneratorView = RlGeneratorView(self.ui)
         '''
         ### End of all variables and functions setup for pageGenerateRL page!
