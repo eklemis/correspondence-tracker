@@ -1,5 +1,3 @@
-import pathlib
-
 import openpyxl
 from fpdf import FPDF
 import os
@@ -78,6 +76,7 @@ class Labels():
 
     def labelFromExcelFile(self, path):
         workbook = openpyxl.load_workbook(path)
+        print("workbook opened!")
 
         sheet = workbook.active
 
