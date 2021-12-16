@@ -35,6 +35,8 @@ class Donor:
                 self._donor_first = record[2].strip()
                 self._donor_middle = record[3].strip()
                 self._donor_last = record[4].strip()
+                self.isOrganization = self._donor_first == "nan" and self._donor_last == "nan"
+
                 self._donor_sufix = record[5]
                 self._env_line_1 = record[6]
                 self._donor_salut = record[7]
@@ -85,6 +87,8 @@ class Donor:
         return value
     def getAddressLineOne(self):
         return self._adrs_line_1
+    def getSalutation(self):
+        return self._donor_salut
     def lastStatus(self):
         return self._ddb_stat_code
     def lastStatusDate(self):
